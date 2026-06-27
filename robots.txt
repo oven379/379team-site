@@ -1,6 +1,12 @@
 User-agent: *
 Allow: /
 
+User-agent: Googlebot
+Allow: /
+
+User-agent: Yandex
+Allow: /
+
 User-agent: GPTBot
 Allow: /
 
@@ -35,6 +41,12 @@ User-agent: Bytespider
 Allow: /
 
 User-agent: cohere-ai
+Allow: /
+
+User-agent: meta-externalagent
+Allow: /
+
+User-agent: DuckAssistBot
 Allow: /
 
 Sitemap: https://379team.ru/sitemap.xml

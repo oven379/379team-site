@@ -129,7 +129,7 @@
 
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-    :root{--bg:#181818;--bg2:#202020;--bg3:#272727;--border:#333;--accent:#c8ff00;--text:#f0f0f0;--muted:#888;--muted2:#555;--white:#ffffff}
+    :root{--bg:#181818;--bg2:#202020;--bg3:#272727;--border:#333;--accent:#c8ff00;--text:#f0f0f0;--muted:#aaa;--muted2:#666;--white:#ffffff}
     html{scroll-behavior:smooth}
     body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
 
@@ -141,7 +141,7 @@
     .nav-links a:hover{color:var(--white)}
     .nav-cta{background:var(--accent);color:#000;padding:10px 22px;border-radius:6px;font-weight:700;font-size:14px;text-decoration:none;white-space:nowrap}
 
-    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding:80px 60px 80px;position:relative;overflow:hidden}
+    .hero{display:flex;flex-direction:column;justify-content:center;padding:60px 60px 60px;position:relative;overflow:hidden}
     .hero::before{content:'';position:absolute;top:-200px;right:-200px;width:700px;height:700px;background:radial-gradient(circle,rgba(200,255,0,.06) 0%,transparent 70%);pointer-events:none}
     .hero-eyebrow{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:24px}
     .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(38px,6vw,82px);font-weight:700;line-height:1.05;letter-spacing:-2px;max-width:950px;margin-bottom:28px}
@@ -246,17 +246,60 @@
     .footer-copy{color:var(--muted2);font-size:12px}
 
     @media(max-width:1024px){
-      nav{padding:16px 24px}
-      .nav-links{display:none}
-      .hero{padding:120px 24px 60px}
-      .hero-stats{gap:28px}
-      section{padding:70px 24px}
-      .services-grid{grid-template-columns:1fr}
-      .process-steps{grid-template-columns:1fr}
-      .pricing-cards{grid-template-columns:1fr}
+      .services-grid{grid-template-columns:repeat(2,1fr)}
       .why-grid{grid-template-columns:repeat(2,1fr)}
-      .cta-section{padding:70px 24px}
-      footer{padding:24px;flex-direction:row;flex-wrap:wrap;gap:12px;}
+      .pricing-cards{grid-template-columns:1fr}
+      .process-steps{grid-template-columns:1fr}
+    }
+
+    @media(max-width:768px){
+      header[style]{padding:16px 20px}
+      .hero{padding:40px 20px 40px}
+      .hero h1{font-size:clamp(32px,8vw,52px);letter-spacing:-1px}
+      .hero-sub{font-size:15px;margin-bottom:32px}
+      .hero-actions{flex-direction:column;gap:12px}
+      .hero-actions a{text-align:center;padding:14px 24px}
+      .hero-stats{gap:24px;margin-top:48px;padding-top:28px}
+      .stat-num{font-size:36px}
+      .stat-label{font-size:12px}
+      section{padding:56px 20px}
+      .section-title{font-size:clamp(24px,6vw,36px);letter-spacing:-0.5px}
+      .section-sub{font-size:15px}
+
+      /* Аккордеон услуг на мобиле */
+      .services-grid{display:flex;flex-direction:column;gap:0;background:none;border:none}
+      .service-card{padding:0;border:none;border-bottom:1px solid var(--border);border-radius:0;background:var(--bg)}
+      .service-card-header{display:flex;justify-content:space-between;align-items:center;padding:18px 20px;cursor:pointer;user-select:none}
+      .service-card-header h3{font-size:15px;font-weight:600;margin:0}
+      .service-card-arrow{color:var(--accent);font-size:20px;flex-shrink:0;transition:transform .3s;line-height:1}
+      .service-card.open .service-card-arrow{transform:rotate(45deg)}
+      .service-card-body{display:none;padding:0 20px 20px}
+      .service-card.open .service-card-body{display:block}
+      .service-card-body > p{color:var(--muted);font-size:13px;line-height:1.75;margin-bottom:12px}
+
+      .why-grid{grid-template-columns:1fr;gap:12px}
+      .why-item{padding:20px 16px}
+      .process-steps{grid-template-columns:1fr;gap:28px}
+      .pricing-cards{grid-template-columns:1fr;gap:16px}
+      .pricing-card{padding:28px 20px}
+      .pricing-card .price{font-size:30px}
+      .faq-list{margin-top:36px}
+      .faq-q{font-size:15px;padding:18px 0}
+      .team-roles{gap:8px}
+      .role-chip{font-size:12px;padding:7px 14px}
+      .cta-section{padding:60px 20px}
+      .cta-section h2{font-size:clamp(24px,7vw,40px)}
+      .cta-section p{font-size:15px}
+      footer{padding:16px 20px;flex-direction:row;align-items:center;gap:0}
+      .footer-brand{font-size:18px}
+      .footer-phone{font-size:14px}
+    }
+
+    @media(max-width:400px){
+      .hero h1{font-size:28px}
+      .stat-num{font-size:30px}
+      .section-title{font-size:22px}
+      .pricing-card .price{font-size:26px}
     }
   </style>
 </head>
@@ -265,14 +308,21 @@
 
 
 <!-- HEADER -->
-<header style="background:var(--bg2);padding:24px 60px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
-  <span class="footer-brand">it <span>Co</span></span>
-  <a class="footer-phone" href="https://t.me/manager379team" target="_blank" rel="noopener">@manager379team</a>
+<header style="background:var(--bg2);padding:16px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;">
+  <span class="footer-brand" style="margin-left:0">It <span>Компания</span></span>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="tel:+79850249319" aria-label="Позвонить нам" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);color:var(--text);transition:opacity .2s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+    </a>
+    <a href="https://t.me/manager379team" target="_blank" rel="noopener" aria-label="Написать в Telegram" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#000;transition:opacity .2s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.77l-1.9 8.96c-.14.63-.51.78-.97.49l-2.7-1.99-1.3 1.25c-.14.14-.27.27-.54.27l.19-2.73 4.96-4.48c.22-.19-.05-.3-.34-.11L7.6 14.47l-2.65-.83c-.58-.18-.59-.58.12-.86l10.36-3.99c.48-.18.9.11.5.98z" fill="currentColor"/></svg>
+    </a>
+  </div>
 </header>
 
 
 <header class="hero" id="home" role="banner">
-  <p class="hero-eyebrow">IT-команда полного цикла · 93 проекта</p>
+  <p class="hero-eyebrow">IT-компания полного цикла · 93 проекта</p>
   <h1>Создаём <em>сайты и цифровые продукты</em> которые продают</h1>
   <p class="hero-sub">Лендинги, многостраничники, интернет-магазины на Tilda от 69 000 ₽. Backend, мобильные приложения, DevOps. 15 рабочих дней до запуска — фиксированные сроки и прозрачность.</p>
   <div class="hero-actions">
@@ -601,7 +651,7 @@
 <!-- WHY -->
 <section id="why" aria-labelledby="why-title" style="background:var(--bg2)">
   <p class="section-label">Почему мы</p>
-  <h2 class="section-title" id="why-title">4 причины работать с 379TEAM</h2>
+  <h2 class="section-title" id="why-title">4 причины работать с нашей компанией</h2>
   <div class="why-grid">
     <div class="why-item"><div class="why-icon"></div><h4>Запуск за 15 дней</h4><p>Лендинг — за 6–10 дней. Многостраничник — за 14–20. Фиксируем дедлайн на берегу и соблюдаем его без отговорок.</p></div>
     <div class="why-item"><div class="why-icon"></div><h4>Фиксированная цена</h4><p>Стоимость согласуем до старта работ. Никаких «доплат по результату» и скрытых платежей в процессе.</p></div>
@@ -708,9 +758,15 @@
 
 <!-- FOOTER -->
 <footer role="contentinfo">
-  <span class="footer-brand">it <span>Co</span></span>
-  <a class="footer-phone" href="https://t.me/manager379team" target="_blank" rel="noopener">@manager379team</a>
-  <a class="footer-phone" href="tel:+79850249319">+7 (985) 024-93-19</a>
+  <span class="footer-brand">It <span>Компания</span></span>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="tel:+79850249319" aria-label="Позвонить нам" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--bg3);border:1px solid var(--border);color:var(--text);transition:opacity .2s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+    </a>
+    <a href="https://t.me/manager379team" target="_blank" rel="noopener" aria-label="Написать в Telegram" style="display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;background:var(--accent);color:#000;transition:opacity .2s" onmouseover="this.style.opacity='.8'" onmouseout="this.style.opacity='1'">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.77l-1.9 8.96c-.14.63-.51.78-.97.49l-2.7-1.99-1.3 1.25c-.14.14-.27.27-.54.27l.19-2.73 4.96-4.48c.22-.19-.05-.3-.34-.11L7.6 14.47l-2.65-.83c-.58-.18-.59-.58.12-.86l10.36-3.99c.48-.18.9.11.5.98z" fill="currentColor"/></svg>
+    </a>
+  </div>
 </footer>
 
 <script>
@@ -721,6 +777,41 @@
     document.querySelectorAll('.faq-q').forEach(x => { x.classList.remove('open'); x.setAttribute('aria-expanded','false'); });
     if (!open) { a.classList.add('open'); btn.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
   }
+
+  // Мобильный аккордеон для услуг
+  function initServiceAccordion() {
+    if (window.innerWidth > 768) return;
+    document.querySelectorAll('.service-card').forEach(card => {
+      if (card.querySelector('.service-card-header')) return; // уже инициализировано
+      const h3 = card.querySelector('h3');
+      const body = document.createElement('div');
+      body.className = 'service-card-body';
+      // переносим всё кроме h3 в body
+      Array.from(card.children).forEach(child => {
+        if (child !== h3) body.appendChild(child);
+      });
+      const header = document.createElement('div');
+      header.className = 'service-card-header';
+      header.innerHTML = '';
+      header.appendChild(h3);
+      const arrow = document.createElement('span');
+      arrow.className = 'service-card-arrow';
+      arrow.textContent = '+';
+      header.appendChild(arrow);
+      header.addEventListener('click', () => {
+        const isOpen = card.classList.contains('open');
+        document.querySelectorAll('.service-card').forEach(c => c.classList.remove('open'));
+        if (!isOpen) card.classList.add('open');
+      });
+      card.appendChild(header);
+      card.appendChild(body);
+    });
+  }
+
+  initServiceAccordion();
+  window.addEventListener('resize', () => {
+    if (window.innerWidth <= 768) initServiceAccordion();
+  });
   const obs = new IntersectionObserver(entries => {
     entries.forEach(e => { if (e.isIntersecting) { e.target.style.opacity='1'; e.target.style.transform='translateY(0)'; } });
   }, {threshold: 0.08});
