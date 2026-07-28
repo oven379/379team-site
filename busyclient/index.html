@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Занятый клиент — сайт под ключ без вашего участия | It Компания</title>
+  <meta name="description" content="Вы даёте бриф и оплату — мы делаем всё остальное. Дизайн, тексты, вёрстка, SEO, домен, хостинг. Сайт под ключ без технического задания и маркетолога."/>
+  <meta name="keywords" content="сайт под ключ без участия, заказать сайт под ключ, сайт без технического задания, разработка сайта под ключ, занятый клиент сайт"/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://itcompania.ru/busyclient/"/>
+  <meta property="og:title" content="Занятый клиент — сайт под ключ без вашего участия"/>
+  <meta property="og:description" content="Вы даёте бриф и оплату — мы делаем всё остальное. Сайт под ключ без ТЗ и маркетолога."/>
+  <meta property="og:url" content="https://itcompania.ru/busyclient/"/>
+  <meta property="og:type" content="website"/>
+  <link rel="icon" href="/favicon.ico"/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#0d0d0d;--bg2:#141414;--bg3:#1c1c1c;--border:#2a2a2a;--accent:#c8ff00;--text:#f0f0f0;--muted:#888;--white:#fff}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;overflow-x:hidden}
+
+    /* HEADER */
+    header{background:rgba(13,13,13,.95);padding:16px 40px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:100;backdrop-filter:blur(12px)}
+    .logo{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--white);text-decoration:none}
+    .logo span{color:var(--accent)}
+    .header-btns{display:flex;gap:12px}
+    .icon-btn{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;transition:opacity .2s;text-decoration:none}
+    .icon-btn.phone{background:var(--bg3);border:1px solid var(--border);color:var(--text)}
+    .icon-btn.tg{background:var(--accent);color:#000}
+
+    /* HERO — особый стиль */
+    .hero{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:100px 40px 80px;position:relative;overflow:hidden}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 40%,rgba(200,255,0,.08) 0%,transparent 70%);pointer-events:none}
+    .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:1px;background:linear-gradient(90deg,transparent,var(--accent),transparent)}
+    .hero-badge{display:inline-flex;align-items:center;gap:8px;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.3);border-radius:100px;padding:8px 20px;font-size:13px;font-weight:600;color:var(--accent);letter-spacing:1px;text-transform:uppercase;margin-bottom:40px}
+    .hero-badge::before{content:'';width:8px;height:8px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite}
+    @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(1.4)}}
+    .hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(42px,7vw,96px);font-weight:700;line-height:1;letter-spacing:-3px;margin-bottom:32px;max-width:900px}
+    .hero h1 .line1{display:block;color:var(--muted);font-weight:300;font-size:.6em;letter-spacing:-1px;margin-bottom:8px}
+    .hero h1 .line2{display:block;color:var(--white)}
+    .hero h1 .line3{display:block;color:var(--accent)}
+    .hero-sub{font-size:20px;color:var(--muted);max-width:560px;line-height:1.7;margin-bottom:56px}
+    .hero-sub strong{color:var(--white)}
+    .hero-cta{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:80px}
+    .btn-accent{background:var(--accent);color:#000;padding:18px 44px;border-radius:8px;font-weight:700;font-size:16px;text-decoration:none;transition:all .2s;display:inline-block}
+    .btn-accent:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(200,255,0,.3)}
+    .btn-outline{border:1px solid var(--border);color:var(--muted);padding:18px 44px;border-radius:8px;font-size:16px;text-decoration:none;transition:all .2s;display:inline-block}
+    .btn-outline:hover{border-color:var(--accent);color:var(--accent)}
+
+    /* SPLIT ВИЗУАЛ */
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--border);margin:0 40px}
+    .split-side{padding:60px 48px;background:var(--bg)}
+    .split-side.dark{background:var(--bg2)}
+    .split-label{font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;margin-bottom:20px}
+    .split-label.red{color:#ff4444}
+    .split-label.green{color:var(--accent)}
+    .split-side h3{font-family:'Space Grotesk',sans-serif;font-size:28px;font-weight:700;margin-bottom:24px;line-height:1.2}
+    .split-list{list-style:none}
+    .split-list li{padding:12px 0;border-bottom:1px solid var(--border);font-size:15px;color:var(--muted);display:flex;gap:12px;align-items:flex-start}
+    .split-list li .ico{flex-shrink:0;margin-top:2px;font-size:16px}
+
+    /* ЧТО МЫ ДЕЛАЕМ */
+    .what-section{padding:100px 40px;max-width:1200px;margin:0 auto}
+    .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:16px}
+    h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,52px);font-weight:700;letter-spacing:-1.5px;line-height:1.1;margin-bottom:16px}
+    .section-sub{color:var(--muted);font-size:17px;max-width:580px;line-height:1.7;margin-bottom:60px}
+    .steps-big{display:flex;flex-direction:column;gap:0}
+    .step-big{display:grid;grid-template-columns:80px 1fr;gap:0;border-bottom:1px solid var(--border);padding:40px 0;align-items:start}
+    .step-big:last-child{border-bottom:none}
+    .step-big-num{font-family:'Space Grotesk',sans-serif;font-size:56px;font-weight:700;color:var(--border);line-height:1;padding-top:4px}
+    .step-big-content h3{font-family:'Space Grotesk',sans-serif;font-size:24px;font-weight:600;margin-bottom:10px}
+    .step-big-content p{color:var(--muted);font-size:15px;line-height:1.75;max-width:600px}
+    .step-big-tag{display:inline-block;background:rgba(200,255,0,.08);border:1px solid rgba(200,255,0,.2);border-radius:4px;padding:4px 12px;font-size:12px;font-weight:600;color:var(--accent);margin-top:12px;letter-spacing:.5px}
+
+    /* ЦЕНА */
+    .price-section{padding:100px 40px;background:var(--bg2);border-top:1px solid var(--border);border-bottom:1px solid var(--border)}
+    .price-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+    .price-left h2{margin-bottom:16px}
+    .price-left p{color:var(--muted);font-size:16px;line-height:1.75}
+    .price-card{background:var(--bg3);border:1px solid var(--border);border-radius:16px;padding:48px 40px}
+    .price-card .price-big{font-family:'Space Grotesk',sans-serif;font-size:64px;font-weight:700;color:var(--accent);line-height:1;margin-bottom:8px}
+    .price-card .price-desc{color:var(--muted);font-size:14px;margin-bottom:32px}
+    .price-features{list-style:none}
+    .price-features li{padding:12px 0;border-bottom:1px solid var(--border);display:flex;gap:10px;font-size:14px;color:var(--muted);align-items:flex-start}
+    .price-features li::before{content:'✓';color:var(--accent);font-weight:700;flex-shrink:0}
+    .price-card .btn-accent{display:block;text-align:center;margin-top:32px}
+
+    /* FAQ */
+    .faq-section{padding:100px 40px;max-width:900px;margin:0 auto}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-q{width:100%;background:none;border:none;color:var(--text);font-size:17px;font-weight:500;text-align:left;padding:24px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Inter',sans-serif}
+    .faq-q .arr{color:var(--accent);font-size:22px;transition:transform .3s;flex-shrink:0}
+    .faq-q.open .arr{transform:rotate(45deg)}
+    .faq-a{display:none;color:var(--muted);font-size:15px;line-height:1.8;padding-bottom:24px}
+    .faq-a.open{display:block}
+
+    /* CTA ФИНАЛЬНЫЙ */
+    .final-cta{padding:120px 40px;text-align:center;position:relative;overflow:hidden}
+    .final-cta::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 60% 80% at 50% 50%,rgba(200,255,0,.06) 0%,transparent 70%);pointer-events:none}
+    .final-cta h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,6vw,72px);font-weight:700;letter-spacing:-2px;line-height:1.05;margin-bottom:24px}
+    .final-cta h2 em{font-style:normal;color:var(--accent)}
+    .final-cta p{font-size:18px;color:var(--muted);margin-bottom:48px;max-width:480px;margin-left:auto;margin-right:auto}
+    .final-cta .btn-accent{font-size:18px;padding:22px 56px}
+
+    /* FOOTER */
+    footer{background:var(--bg2);padding:24px 40px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .footer-logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--white);text-decoration:none}
+    .footer-logo span{color:var(--accent)}
+
+    @media(max-width:768px){
+      header{padding:16px 20px}
+      .hero{padding:80px 20px 60px}
+      .hero h1{letter-spacing:-1.5px}
+      .split{margin:0;flex-direction:column}
+      .split{display:flex;flex-direction:column}
+      .split-side{padding:40px 24px}
+      .what-section{padding:60px 20px}
+      .step-big{grid-template-columns:50px 1fr}
+      .step-big-num{font-size:36px}
+      .price-section{padding:60px 20px}
+      .price-inner{grid-template-columns:1fr}
+      .faq-section{padding:60px 20px}
+      .final-cta{padding:80px 20px}
+      footer{padding:20px}
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <a class="logo" href="/"><span>It</span> Компания</a>
+  <div class="header-btns">
+    <a href="tel:+79850249319" class="icon-btn phone" aria-label="Позвонить"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/></svg></a>
+    <a href="https://t.me/manager379team" target="_blank" class="icon-btn tg" aria-label="Telegram"><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.77l-1.9 8.96c-.14.63-.51.78-.97.49l-2.7-1.99-1.3 1.25c-.14.14-.27.27-.54.27l.19-2.73 4.96-4.48c.22-.19-.05-.3-.34-.11L7.6 14.47l-2.65-.83c-.58-.18-.59-.58.12-.86l10.36-3.99c.48-.18.9.11.5.98z" fill="currentColor"/></svg></a>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-badge">Премиальная услуга · Занятый клиент</div>
+  <h1>
+    <span class="line1">Вы занимаетесь бизнесом.</span>
+    <span class="line2">Мы делаем</span>
+    <span class="line3">шедевр.</span>
+  </h1>
+  <p class="hero-sub">Бриф и оплата — <strong>всё что от вас нужно.</strong> Дизайн, тексты, вёрстка, SEO, домен, хостинг — наша забота. Вы получаете готовый сайт.</p>
+  <div class="hero-cta">
+    <a class="btn-accent" href="https://t.me/manager379team" target="_blank">Хочу такой сайт</a>
+    <a class="btn-outline" href="#how">Как это работает</a>
+  </div>
+</section>
+
+<!-- SPLIT: ОБЫЧНО vs С НАМИ -->
+<div class="split">
+  <div class="split-side">
+    <div class="split-label red">Обычно при заказе сайта</div>
+    <h3>Вы тратите время и нервы</h3>
+    <ul class="split-list">
+      <li><span class="ico">✗</span>Пишете техническое задание на 20 страниц</li>
+      <li><span class="ico">✗</span>Объясняете дизайнеру что хотите — по несколько раз</li>
+      <li><span class="ico">✗</span>Пишете тексты сами или ищете копирайтера</li>
+      <li><span class="ico">✗</span>Контролируете сроки и переписываетесь с командой</li>
+      <li><span class="ico">✗</span>Разбираетесь с хостингом и доменом</li>
+      <li><span class="ico">✗</span>Принимаете правки по 5 итераций</li>
+    </ul>
+  </div>
+  <div class="split-side dark">
+    <div class="split-label green">С услугой «Занятый клиент»</div>
+    <h3>Вы просто ждёте результат</h3>
+    <ul class="split-list">
+      <li><span class="ico" style="color:var(--accent)">✓</span>Заполняете короткий бриф — 15 минут вашего времени</li>
+      <li><span class="ico" style="color:var(--accent)">✓</span>Оплачиваете и занимаетесь своим бизнесом</li>
+      <li><span class="ico" style="color:var(--accent)">✓</span>Мы пишем тексты, продумываем структуру и дизайн</li>
+      <li><span class="ico" style="color:var(--accent)">✓</span>Сами настраиваем домен, хостинг и SEO</li>
+      <li><span class="ico" style="color:var(--accent)">✓</span>Показываем готовый результат в срок</li>
+      <li><span class="ico" style="color:var(--accent)">✓</span>Вносим правки и передаём управление сайтом</li>
+    </ul>
+  </div>
+</div>
+
+<!-- ЧТО МЫ ДЕЛАЕМ -->
+<div class="what-section" id="how">
+  <p class="section-label">Что делаем мы</p>
+  <h2>Полный цикл без вашего участия</h2>
+  <p class="section-sub">Пока вы занимаетесь тем что у вас получается лучше всего — мы создаём сайт который будет работать на ваш бизнес.</p>
+
+  <div class="steps-big">
+    <div class="step-big">
+      <div class="step-big-num">01</div>
+      <div class="step-big-content">
+        <h3>Изучаем ваш бизнес</h3>
+        <p>Анализируем вашу нишу, конкурентов и целевую аудиторию. Без лишних вопросов — нам достаточно короткого брифа и понимания вашего продукта.</p>
+        <span class="step-big-tag">Ваше участие: 15 минут на бриф</span>
+      </div>
+    </div>
+    <div class="step-big">
+      <div class="step-big-num">02</div>
+      <div class="step-big-content">
+        <h3>Пишем тексты и создаём структуру</h3>
+        <p>Наши копирайтеры пишут продающие тексты с нуля. Разрабатываем структуру сайта по правилам UX/UI — так чтобы посетитель дошёл до заявки.</p>
+        <span class="step-big-tag">Ваше участие: ноль</span>
+      </div>
+    </div>
+    <div class="step-big">
+      <div class="step-big-num">03</div>
+      <div class="step-big-content">
+        <h3>Создаём уникальный дизайн</h3>
+        <p>Дизайнер разрабатывает визуальный стиль под ваш бренд. Никаких шаблонов — всё с нуля. Подбираем фотографии, иконки, цвета и типографику.</p>
+        <span class="step-big-tag">Ваше участие: ноль</span>
+      </div>
+    </div>
+    <div class="step-big">
+      <div class="step-big-num">04</div>
+      <div class="step-big-content">
+        <h3>Верстаем, настраиваем, запускаем</h3>
+        <p>Верстаем на Tilda, подключаем домен и хостинг, настраиваем SEO, подключаем CRM для сбора заявок. Тестируем на всех устройствах.</p>
+        <span class="step-big-tag">Ваше участие: ноль</span>
+      </div>
+    </div>
+    <div class="step-big">
+      <div class="step-big-num">05</div>
+      <div class="step-big-content">
+        <h3>Передаём готовый шедевр</h3>
+        <p>Показываем финальный результат, вносим ваши правки и передаём полный доступ к сайту. Обучаем как редактировать контент самостоятельно.</p>
+        <span class="step-big-tag">Ваше участие: принять работу</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ЦЕНА -->
+<div class="price-section">
+  <div class="price-inner">
+    <div class="price-left">
+      <p class="section-label">Стоимость</p>
+      <h2>Инвестиция в результат без головной боли</h2>
+      <p>Стоимость включает всё — от текстов до хостинга. Никаких доплат за «дополнительные правки» или «сложный контент».</p>
+      <br/>
+      <p style="color:var(--muted);font-size:14px;line-height:1.7">Точную стоимость рассчитываем на бесплатной консультации — зависит от объёма сайта и сложности ниши.</p>
+    </div>
+    <div class="price-card">
+      <div class="price-big">от 89 000 ₽</div>
+      <div class="price-desc">полный цикл · фиксированная цена · без скрытых доплат</div>
+      <ul class="price-features">
+        <li>Анализ ниши и конкурентов</li>
+        <li>Написание продающих текстов</li>
+        <li>Уникальный дизайн под ваш бренд</li>
+        <li>Вёрстка на Tilda, все устройства</li>
+        <li>Подключение домена и хостинга</li>
+        <li>SEO-оптимизация страниц</li>
+        <li>Подключение CRM и форм заявок</li>
+        <li>Поддержка 1 месяц после запуска</li>
+        <li>Обучение работе с сайтом</li>
+      </ul>
+      <a class="btn-accent" href="https://t.me/manager379team" target="_blank">Обсудить проект</a>
+    </div>
+  </div>
+</div>
+
+<!-- FAQ -->
+<div class="faq-section">
+  <p class="section-label">Вопросы и ответы</p>
+  <h2 style="margin-bottom:48px">FAQ</h2>
+
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Что такое «бриф» и сколько времени займёт его заполнение?<span class="arr">+</span></button>
+    <div class="faq-a">Бриф — короткая анкета из 10–12 вопросов: что вы продаёте, кто ваши клиенты, какие сайты нравятся как референс. Заполняется за 15–20 минут. Никаких технических заданий и маркетинговых исследований — только базовая информация о вашем бизнесе.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Нужно ли предоставлять фотографии и контент?<span class="arr">+</span></button>
+    <div class="faq-a">Если у вас есть фотографии продукта, команды или офиса — отлично, используем их. Если нет — подберём профессиональные стоковые изображения которые подходят вашей нише. Тексты пишем сами полностью.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Могу ли я вносить правки в готовый сайт?<span class="arr">+</span></button>
+    <div class="faq-a">Да. После сдачи вы получаете полный доступ к сайту на Tilda и можете редактировать контент самостоятельно. Мы проводим обучение — менять тексты и фото очень просто.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Сколько времени займёт разработка?<span class="arr">+</span></button>
+    <div class="faq-a">В среднем 10–15 рабочих дней. Срок зависит от объёма сайта. Фиксируем дедлайн в договоре и соблюдаем его — ваш бизнес не должен ждать дольше обещанного.</div>
+  </div>
+  <div class="faq-item">
+    <button class="faq-q" onclick="toggleFaq(this)">Чем эта услуга отличается от обычной разработки?<span class="arr">+</span></button>
+    <div class="faq-a">При обычной разработке вы активно участвуете в процессе: пишете ТЗ, согласовываете каждый шаг, предоставляете тексты. Услуга «Занятый клиент» — это делегирование всего процесса нам. Вы получаете готовый результат без погружения в детали разработки.</div>
+  </div>
+</div>
+
+<!-- ФИНАЛЬНЫЙ CTA -->
+<div class="final-cta">
+  <h2>Ваш бизнес не должен<br/><em>ждать идеального момента</em></h2>
+  <p>Пока вы думаете — конкуренты уже в поиске. Один звонок, бриф на 15 минут — и мы берём всё в свои руки.</p>
+  <a class="btn-accent" href="https://t.me/manager379team" target="_blank">Начать прямо сейчас</a>
+</div>
+
+<footer>
+  <a class="footer-logo" href="/"><span>It</span> Компания</a>
+  <div style="display:flex;gap:12px">
+    <a href="tel:+79850249319" class="icon-btn phone" style="width:36px;height:36px" aria-label="Позвонить"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/></svg></a>
+    <a href="https://t.me/manager379team" target="_blank" class="icon-btn tg" style="width:36px;height:36px" aria-label="Telegram"><svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.77l-1.9 8.96c-.14.63-.51.78-.97.49l-2.7-1.99-1.3 1.25c-.14.14-.27.27-.54.27l.19-2.73 4.96-4.48c.22-.19-.05-.3-.34-.11L7.6 14.47l-2.65-.83c-.58-.18-.59-.58.12-.86l10.36-3.99c.48-.18.9.11.5.98z" fill="currentColor"/></svg></a>
+  </div>
+</footer>
+
+<script>function toggleFaq(btn){const a=btn.nextElementSibling;const open=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!open){a.classList.add('open');btn.classList.add('open');}}</script>
+</body>
+</html>
