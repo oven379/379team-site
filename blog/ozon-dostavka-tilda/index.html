@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Доставка Ozon в пункты выдачи на сайте Tilda — как подключить | It Компания</title>
+  <title>Доставка Ozon на сайте Тильды: кейс настройки интеграции с пунктами выдачи | It Компания</title>
   <meta name="description" content="Как подключить доставку Ozon в пункты выдачи к интернет-магазину на Tilda: карта ПВЗ в корзине, автоматическая передача оплаченных заказов в Ozon Seller, этапы и подводные камни."/>
   <meta name="robots" content="index, follow, max-image-preview:large"/>
   <link rel="canonical" href="https://itcompania.ru/blog/ozon-dostavka-tilda/"/>
@@ -11,13 +11,13 @@
   <meta property="og:site_name" content="It Компания"/>
   <meta property="og:locale" content="ru_RU"/>
   <meta property="og:url" content="https://itcompania.ru/blog/ozon-dostavka-tilda/"/>
-  <meta property="og:title" content="Доставка Ozon в пункты выдачи на сайте Tilda — как подключить"/>
+  <meta property="og:title" content="Доставка Ozon на сайте Тильды: кейс настройки интеграции с пунктами выдачи"/>
   <meta property="og:description" content="Как подключить доставку Ozon в пункты выдачи к интернет-магазину на Tilda: карта ПВЗ в корзине, автоматическая передача оплаченных заказов в Ozon Seller, этапы и подводные камни."/>
   <meta property="og:image" content="https://itcompania.ru/og-image.png"/>
   <meta property="og:image:width" content="1200"/>
   <meta property="og:image:height" content="630"/>
   <meta name="twitter:card" content="summary_large_image"/>
-  <meta name="twitter:title" content="Доставка Ozon в пункты выдачи на сайте Tilda — как подключить"/>
+  <meta name="twitter:title" content="Доставка Ozon на сайте Тильды: кейс настройки интеграции с пунктами выдачи"/>
   <meta name="twitter:description" content="Как подключить доставку Ozon в пункты выдачи к интернет-магазину на Tilda: карта ПВЗ в корзине, автоматическая передача оплаченных заказов в Ozon Seller, этапы и подводные камни."/>
   <meta name="twitter:image" content="https://itcompania.ru/og-image.png"/>
   <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
@@ -104,10 +104,15 @@
       footer{padding:16px 20px}
       .price-block{flex-direction:column;align-items:flex-start;gap:12px}
     }
-    .blog-link{color:var(--text);text-decoration:none;font-size:14px;font-weight:600;align-self:center;margin-right:4px}
-    .blog-link:hover{color:var(--accent)}
-    .blog-link{color:var(--text);text-decoration:none;font-size:14px;font-weight:600;align-self:center;margin-right:4px}
-    .blog-link:hover{color:var(--accent)}
+    .blog-link{display:flex;align-items:center;height:40px;padding:0 18px;border-radius:20px;background:var(--bg3);border:1px solid var(--border);color:var(--text);text-decoration:none;font-size:14px;font-weight:600;transition:border-color .2s,color .2s}
+    .blog-link:hover,.blog-link.active{border-color:var(--accent);color:var(--accent)}
+    .read-more{max-width:1200px;margin:0 auto;padding:16px 60px 72px}
+    .read-more .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+    @media(max-width:768px){.read-more{padding:8px 20px 56px}}
+    .read-more ul{list-style:none;max-width:800px}
+    .read-more li{border-top:1px solid var(--border);padding:16px 0}
+    .read-more a{color:var(--text);text-decoration:none;font-size:17px;font-weight:500}
+    .read-more a:hover{color:var(--accent)}
     .article{max-width:780px;margin:0 auto;padding:0 60px 80px}
     .article-hero{max-width:780px;padding:64px 60px 32px}
     .article-hero h1{font-size:clamp(30px,4.2vw,50px);letter-spacing:-1px;line-height:1.1}
@@ -150,7 +155,23 @@
     .post-card h2{font-size:22px;margin:8px 0 10px}
     .post-card p{color:var(--muted);font-size:15px;line-height:1.7}
     .post-card .more{color:var(--accent);font-weight:600;font-size:14px;margin-top:14px;display:inline-block}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:24px 0 8px}
+    .facts div{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+    .facts b{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+    .facts span{font-size:14px;color:var(--text)}
+    .shot{margin:8px 0 24px}
+    .shot img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--border)}
+    .shot figcaption{color:var(--muted);font-size:13px;margin-top:8px}
+    .shots-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:560px}
+    .more-posts{margin-top:48px}
+    .more-posts h2{margin-top:0}
+    .more-posts ul{list-style:none;margin:0}
+    .more-posts li{border-top:1px solid var(--border);padding:14px 0;margin:0}
+    .more-posts a{color:var(--text);text-decoration:none;font-weight:500}
+    .more-posts a:hover{color:var(--accent)}
     @media(max-width:768px){
+      .facts{grid-template-columns:1fr 1fr}
+      .shots-2{gap:12px}
       .article{padding:0 20px 56px}
       .article-hero{padding:40px 20px 24px}
       .flow-row{flex-direction:column}
@@ -159,6 +180,14 @@
       .arrow::after{right:auto;left:calc(50% - 4px);top:auto;bottom:2px;border:5px solid transparent;border-top:8px solid var(--accent)}
       .arrow span{top:auto;left:calc(50% + 14px);position:absolute;background:none;text-align:left}
       .related,.posts{grid-template-columns:1fr}
+      .article table{min-width:0}
+      .article thead{display:none}
+      .article tr{display:block;border-top:1px solid var(--border);padding:12px 0}
+      .article tbody tr:first-child{border-top:0}
+      .article td{display:block;border:0;padding:4px 16px}
+      .article td[data-label]:not([data-label=""])::before{content:attr(data-label);display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+      .article td[data-label=""]{font-weight:600;color:var(--white);font-size:16px}
+      .shot a::after{content:"Нажмите, чтобы увеличить";display:block;font-size:12px;color:var(--muted);margin-top:6px}
     }
   </style>
   <!-- Yandex.Metrika counter -->
@@ -178,8 +207,7 @@
 <header>
   <a class="logo" href="/"><span>It</span> Компания</a>
   <div class="header-btns">
-    <a href="/blog/" class="blog-link">Блог</a>
-    <a href="/blog/" class="blog-link">Блог</a>
+    <a href="/blog/" class="blog-link active" aria-current="page">Блог</a>
     <a href="tel:+79850249319" class="icon-btn phone" aria-label="Позвонить">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/></svg>
     </a>
@@ -227,11 +255,11 @@
 <div class="table-wrap"><table>
   <thead><tr><th>Было</th><th>Стало</th></tr></thead>
   <tbody>
-    <tr><td>Заказ с сайта приходит на почту, менеджер вручную переносит его в службу доставки</td><td>Оплаченный заказ сам создаётся в Ozon Seller</td></tr>
-    <tr><td>Покупатель пишет адрес текстом, менеджер ищет ближайший пункт</td><td>Покупатель сам выбирает пункт на карте, в заказ уходит его точный идентификатор</td></tr>
-    <tr><td>О том, что товара нет, узнаёте после оплаты</td><td>Наличие и сроки проверяются до оплаты</td></tr>
-    <tr><td>Неоплаченные заявки засоряют учёт</td><td>В Ozon уходят только оплаченные заказы</td></tr>
-    <tr><td>Повторная заявка — риск двойной отправки</td><td>Защита от дублей: один заказ сайта = один заказ Ozon</td></tr>
+    <tr><td data-label="Было">Заказ с сайта приходит на почту, менеджер вручную переносит его в службу доставки</td><td data-label="Стало">Оплаченный заказ сам создаётся в Ozon Seller</td></tr>
+    <tr><td data-label="Было">Покупатель пишет адрес текстом, менеджер ищет ближайший пункт</td><td data-label="Стало">Покупатель сам выбирает пункт на карте, в заказ уходит его точный идентификатор</td></tr>
+    <tr><td data-label="Было">О том, что товара нет, узнаёте после оплаты</td><td data-label="Стало">Наличие и сроки проверяются до оплаты</td></tr>
+    <tr><td data-label="Было">Неоплаченные заявки засоряют учёт</td><td data-label="Стало">В Ozon уходят только оплаченные заказы</td></tr>
+    <tr><td data-label="Было">Повторная заявка — риск двойной отправки</td><td data-label="Стало">Защита от дублей: один заказ сайта = один заказ Ozon</td></tr>
   </tbody>
 </table></div>
 <p>Дополнительно:</p>
@@ -267,12 +295,12 @@
 <div class="table-wrap"><table>
   <thead><tr><th>Этап</th><th>Что делаем</th><th>Результат</th></tr></thead>
   <tbody>
-    <tr><td>1. Аудит</td><td>Проверяем кабинет Ozon Seller, подключение Ozon Доставки, артикулы товаров на Tilda и в Ozon, корзину и оплату</td><td>Понятно, что уже готово и что нужно доделать</td></tr>
-    <tr><td>2. Доступ к Ozon</td><td>Создаём частное приложение в Ozon Seller, настраиваем права, вы один раз подтверждаете доступ</td><td>Интеграция может работать с Ozon Доставкой от имени магазина</td></tr>
-    <tr><td>3. Облако</td><td>Разворачиваем функцию и хранилище в Yandex Cloud на вашем аккаунте</td><td>Инфраструктура принадлежит вам, без аренды серверов</td></tr>
-    <tr><td>4. Карта на сайте</td><td>Ставим виджет выбора пункта в корзину Tilda, подгоняем под дизайн</td><td>Покупатель выбирает пункт и видит сроки</td></tr>
-    <tr><td>5. Заказы</td><td>Подключаем вебхук Tilda и оплату, настраиваем уведомления</td><td>Оплаченные заказы уходят в Ozon сами</td></tr>
-    <tr><td>6. Тест и запуск</td><td>Прогоняем тестовый заказ без создания в Ozon, потом первый боевой</td><td>Интеграция работает на реальных заказах</td></tr>
+    <tr><td data-label="Этап">1. Аудит</td><td data-label="Что делаем">Проверяем кабинет Ozon Seller, подключение Ozon Доставки, артикулы товаров на Tilda и в Ozon, корзину и оплату</td><td data-label="Результат">Понятно, что уже готово и что нужно доделать</td></tr>
+    <tr><td data-label="Этап">2. Доступ к Ozon</td><td data-label="Что делаем">Создаём частное приложение в Ozon Seller, настраиваем права, вы один раз подтверждаете доступ</td><td data-label="Результат">Интеграция может работать с Ozon Доставкой от имени магазина</td></tr>
+    <tr><td data-label="Этап">3. Облако</td><td data-label="Что делаем">Разворачиваем функцию и хранилище в Yandex Cloud на вашем аккаунте</td><td data-label="Результат">Инфраструктура принадлежит вам, без аренды серверов</td></tr>
+    <tr><td data-label="Этап">4. Карта на сайте</td><td data-label="Что делаем">Ставим виджет выбора пункта в корзину Tilda, подгоняем под дизайн</td><td data-label="Результат">Покупатель выбирает пункт и видит сроки</td></tr>
+    <tr><td data-label="Этап">5. Заказы</td><td data-label="Что делаем">Подключаем вебхук Tilda и оплату, настраиваем уведомления</td><td data-label="Результат">Оплаченные заказы уходят в Ozon сами</td></tr>
+    <tr><td data-label="Этап">6. Тест и запуск</td><td data-label="Что делаем">Прогоняем тестовый заказ без создания в Ozon, потом первый боевой</td><td data-label="Результат">Интеграция работает на реальных заказах</td></tr>
   </tbody>
 </table></div>
 
@@ -322,6 +350,14 @@
     <a href="/internet-magazin/"><b>Интернет-магазин на Tilda</b><span>Под ключ от 119 000 ₽, запуск за 20–30 рабочих дней</span></a>
     <a href="/crm/"><b>Интеграция CRM</b><span>AmoCRM и Bitrix24: заявки с сайта сразу у менеджера</span></a>
   </div>
+  <nav class="more-posts" aria-label="Читайте также">
+    <h2>Читайте также</h2>
+    <ul>
+    <li><a href="/blog/keis-karpas/">CRM для детейлинга и СТО КарПас: кейс разработки мобильного приложения</a></li>
+    <li><a href="/blog/skolko-stoit-sajt-na-tilda/">Сколько стоит сайт на Тильде в 2026 году: цены на создание, сроки и из чего складывается стоимость</a></li>
+    <li><a href="/blog/lending-ili-sajt/">Лендинг или сайт: что лучше выбрать для бизнеса</a></li>
+    </ul>
+  </nav>
 </article>
 
 <div class="cta">

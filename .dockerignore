@@ -1,0 +1,7 @@
+.git
+.gitignore
+.dockerignore
+.claude
+.DS_Store
+**/.DS_Store
+Dockerfile

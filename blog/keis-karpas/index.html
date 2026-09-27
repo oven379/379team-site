@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CRM для детейлинга КарПас: кейс разработки приложения | It Компания</title>
+  <meta name="description" content="КарПас — CRM для детейлинга, детейлинг-центров и СТО с приложением для клиента. Как мы сделали его за 3 месяца: iOS, Android и веб, общая история для владельца и сервиса, запись в один тап."/>
+  <meta name="robots" content="index, follow, max-image-preview:large"/>
+  <link rel="canonical" href="https://itcompania.ru/blog/keis-karpas/"/>
+  <meta property="og:type" content="article"/>
+  <meta property="og:site_name" content="It Компания"/>
+  <meta property="og:locale" content="ru_RU"/>
+  <meta property="og:url" content="https://itcompania.ru/blog/keis-karpas/"/>
+  <meta property="og:title" content="CRM для детейлинга КарПас: кейс разработки приложения"/>
+  <meta property="og:description" content="КарПас — CRM для детейлинга, детейлинг-центров и СТО с приложением для клиента. Как мы сделали его за 3 месяца: iOS, Android и веб, общая история для владельца и сервиса, запись в один тап."/>
+  <meta property="og:image" content="https://itcompania.ru/blog/keis-karpas/og.jpg"/>
+  <meta property="og:image:width" content="1200"/>
+  <meta property="og:image:height" content="630"/>
+  <meta name="twitter:card" content="summary_large_image"/>
+  <meta name="twitter:title" content="CRM для детейлинга КарПас: кейс разработки приложения"/>
+  <meta name="twitter:description" content="КарПас — CRM для детейлинга, детейлинг-центров и СТО с приложением для клиента. Как мы сделали его за 3 месяца: iOS, Android и веб, общая история для владельца и сервиса, запись в один тап."/>
+  <meta name="twitter:image" content="https://itcompania.ru/blog/keis-karpas/og.jpg"/>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico"/>
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "CRM для детейлинга и СТО КарПас: кейс разработки мобильного приложения", "description": "КарПас — CRM для детейлинга, детейлинг-центров и СТО с приложением для клиента. Как мы сделали его за 3 месяца: iOS, Android и веб, общая история для владельца и сервиса, запись в один тап.", "image": "https://itcompania.ru/blog/keis-karpas/og.jpg", "datePublished": "2026-09-27", "dateModified": "2026-09-27", "inLanguage": "ru", "author": {"@type": "Organization", "name": "It Компания", "url": "https://itcompania.ru", "logo": {"@type": "ImageObject", "url": "https://itcompania.ru/logo.png"}}, "publisher": {"@type": "Organization", "name": "It Компания", "url": "https://itcompania.ru", "logo": {"@type": "ImageObject", "url": "https://itcompania.ru/logo.png"}}, "mainEntityOfPage": {"@type": "WebPage", "@id": "https://itcompania.ru/blog/keis-karpas/"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Главная", "item": "https://itcompania.ru/"}, {"@type": "ListItem", "position": 2, "name": "Блог", "item": "https://itcompania.ru/blog/"}, {"@type": "ListItem", "position": 3, "name": "CRM для детейлинга КарПас", "item": "https://itcompania.ru/blog/keis-karpas/"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [{"@type": "Question", "name": "Где подключить CRM для детейлинга КарПас?", "acceptedAnswer": {"@type": "Answer", "text": "На сайте carpasss.ru. На этапе запуска подключение для детейлинг-центров и СТО бесплатное, помощь с настройкой включена."}}, {"@type": "Question", "name": "Что такое КарПас?", "acceptedAnswer": {"@type": "Answer", "text": "Цифровая история обслуживания автомобиля. Владелец хранит визиты, пробег, фото и документы, а детейлинг или СТО ведут в том же сервисе CRM с клиентами и фотоотчётами."}}, {"@type": "Question", "name": "Сколько времени заняла разработка КарПас?", "acceptedAnswer": {"@type": "Answer", "text": "3 месяца — разработка и тестирование мобильных приложений для iOS и Android, веб-версии и CRM для сервисов."}}, {"@type": "Question", "name": "На каких платформах работает КарПас?", "acceptedAnswer": {"@type": "Answer", "text": "Мобильные приложения для iOS и Android, а также веб-версия. История автомобиля одна на всех устройствах."}}, {"@type": "Question", "name": "Можно ли заказать у вас похожее приложение?", "acceptedAnswer": {"@type": "Answer", "text": "Да. Мы разрабатываем мобильные приложения, CRM и сервисы с несколькими ролями пользователей. Напишите нам в Telegram и опишите задачу."}}]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet"/>
+  <style>
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    :root{--bg:#181818;--bg2:#202020;--bg3:#272727;--border:#333;--accent:#c8ff00;--text:#f0f0f0;--muted:#aaa;--white:#fff}
+    html{scroll-behavior:smooth}
+    body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+    header{background:var(--bg2);padding:16px 24px;border-bottom:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .logo{font-family:'Space Grotesk',sans-serif;font-size:20px;font-weight:700;color:var(--white);text-decoration:none}
+    .logo span{color:var(--accent)}
+    .header-btns{display:flex;gap:12px}
+    .icon-btn{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:50%;transition:opacity .2s}
+    .icon-btn:hover{opacity:.8}
+    .icon-btn.phone{background:var(--bg3);border:1px solid var(--border);color:var(--text)}
+    .icon-btn.tg{background:var(--accent);color:#000}
+    .hero{padding:80px 60px 60px;max-width:1200px;margin:0 auto}
+    .breadcrumb{font-size:13px;color:var(--muted);margin-bottom:24px}
+    .breadcrumb a{color:var(--muted);text-decoration:none}
+    .breadcrumb a:hover{color:var(--accent)}
+    .eyebrow{font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+    h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(36px,5vw,64px);font-weight:700;line-height:1.05;letter-spacing:-1.5px;margin-bottom:24px}
+    h1 em{font-style:normal;color:var(--accent)}
+    .hero-sub{font-size:18px;color:var(--muted);max-width:620px;margin-bottom:40px;line-height:1.75}
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:60px}
+    .btn-primary{background:var(--accent);color:#000;padding:16px 36px;border-radius:8px;font-weight:700;font-size:15px;text-decoration:none;display:inline-block;transition:opacity .2s}
+    .btn-primary:hover{opacity:.85}
+    .btn-ghost{border:1px solid var(--border);color:var(--text);padding:16px 36px;border-radius:8px;font-weight:500;font-size:15px;text-decoration:none;display:inline-block;transition:border-color .2s}
+    .btn-ghost:hover{border-color:var(--accent);color:var(--accent)}
+    .price-block{display:inline-flex;align-items:center;gap:24px;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px 32px}
+    .price-num{font-family:'Space Grotesk',sans-serif;font-size:42px;font-weight:700;color:var(--accent)}
+    .price-meta{font-size:13px;color:var(--muted)}
+    .price-days{font-size:15px;font-weight:600;color:var(--text);margin-top:4px}
+    section{padding:80px 60px;max-width:1200px;margin:0 auto}
+    .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+    h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(26px,3.5vw,42px);font-weight:700;letter-spacing:-1px;line-height:1.1;margin-bottom:14px}
+    .section-sub{color:var(--muted);font-size:16px;max-width:580px;line-height:1.7;margin-bottom:48px}
+    .includes-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px}
+    .include-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:24px}
+    .include-item h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .include-item p{color:var(--muted);font-size:14px;line-height:1.7}
+    .process-steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+    .step{position:relative;padding-left:0}
+    .step-num{font-family:'Space Grotesk',sans-serif;font-size:48px;font-weight:700;color:var(--border);line-height:1;margin-bottom:12px}
+    .step h3{font-size:16px;font-weight:600;margin-bottom:8px}
+    .step p{color:var(--muted);font-size:14px;line-height:1.7}
+    .why-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:48px}
+    .why-item{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:28px}
+    .why-item h3{font-size:17px;font-weight:600;margin-bottom:10px}
+    .why-item p{color:var(--muted);font-size:14px;line-height:1.7}
+    .faq-list{max-width:800px;margin-top:48px}
+    .faq-item{border-bottom:1px solid var(--border)}
+    .faq-q{width:100%;background:none;border:none;color:var(--text);font-size:16px;font-weight:500;text-align:left;padding:20px 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;font-family:'Inter',sans-serif}
+    .faq-q .arr{color:var(--accent);font-size:20px;transition:transform .3s}
+    .faq-q.open .arr{transform:rotate(45deg)}
+    .faq-a{display:none;color:var(--muted);font-size:14px;line-height:1.8;padding-bottom:20px}
+    .faq-a.open{display:block}
+    .cta{background:#000;padding:80px 60px;text-align:center;border-top:1px solid var(--border)}
+    .cta h2{font-family:'Space Grotesk',sans-serif;font-size:clamp(28px,4vw,48px);font-weight:700;color:#fff;letter-spacing:-1px;margin-bottom:14px}
+    .cta p{color:rgba(255,255,255,.6);font-size:16px;margin-bottom:36px;max-width:480px;margin-left:auto;margin-right:auto}
+    footer{background:var(--bg2);padding:24px;border-top:1px solid var(--border);display:flex;justify-content:space-between;align-items:center}
+    .footer-logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--white);text-decoration:none}
+    .footer-logo span{color:var(--accent)}
+    @media(max-width:768px){
+      .hero{padding:40px 20px}
+      section{padding:56px 20px}
+      .includes-grid{grid-template-columns:1fr}
+      .process-steps{grid-template-columns:repeat(2,1fr)}
+      .why-grid{grid-template-columns:1fr}
+      .cta{padding:60px 20px}
+      footer{padding:16px 20px}
+      .price-block{flex-direction:column;align-items:flex-start;gap:12px}
+    }
+    .blog-link{display:flex;align-items:center;height:40px;padding:0 18px;border-radius:20px;background:var(--bg3);border:1px solid var(--border);color:var(--text);text-decoration:none;font-size:14px;font-weight:600;transition:border-color .2s,color .2s}
+    .blog-link:hover,.blog-link.active{border-color:var(--accent);color:var(--accent)}
+    .read-more{max-width:1200px;margin:0 auto;padding:16px 60px 72px}
+    .read-more .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+    @media(max-width:768px){.read-more{padding:8px 20px 56px}}
+    .read-more ul{list-style:none;max-width:800px}
+    .read-more li{border-top:1px solid var(--border);padding:16px 0}
+    .read-more a{color:var(--text);text-decoration:none;font-size:17px;font-weight:500}
+    .read-more a:hover{color:var(--accent)}
+    .article{max-width:780px;margin:0 auto;padding:0 60px 80px}
+    .article-hero{max-width:780px;padding:64px 60px 32px}
+    .article-hero h1{font-size:clamp(30px,4.2vw,50px);letter-spacing:-1px;line-height:1.1}
+    .meta{color:var(--muted);font-size:14px}
+    .article .lead{font-size:19px;color:var(--text);line-height:1.75;margin-bottom:8px}
+    .article h2{font-size:clamp(24px,3vw,32px);margin:56px 0 16px}
+    .article p{color:#d6d6d6;font-size:17px;line-height:1.8;margin-bottom:16px}
+    .article a{color:var(--accent)}
+    .article ul,.article ol{margin:0 0 20px 22px;color:#d6d6d6;font-size:17px;line-height:1.8}
+    .article li{margin-bottom:8px}
+    .article li::marker{color:var(--accent)}
+    .article strong{color:var(--white)}
+    .article .checklist{list-style:none;margin-left:0}
+    .article .checklist li{padding-left:30px;position:relative}
+    .article .checklist li::before{content:"✓";position:absolute;left:0;color:var(--accent);font-weight:700}
+    .table-wrap{overflow-x:auto;margin:8px 0 24px;border:1px solid var(--border);border-radius:10px}
+    .article table{width:100%;border-collapse:collapse;font-size:15px;min-width:520px}
+    .article th{background:var(--bg3);text-align:left;padding:14px 16px;color:var(--white);font-weight:600}
+    .article td{padding:14px 16px;border-top:1px solid var(--border);color:#d6d6d6;vertical-align:top;line-height:1.6}
+    .flow{background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:24px;margin:8px 0 24px}
+    .flow-row{display:flex;align-items:stretch;gap:0;margin-bottom:14px}
+    .node{flex:1;background:var(--bg3);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center;font-weight:600;font-size:14px;color:var(--white)}
+    .node small{display:block;font-weight:400;color:var(--muted);font-size:12px;margin-top:2px}
+    .node.accent{border-color:var(--accent)}
+    .arrow{flex:0 0 96px;display:flex;align-items:center;justify-content:center;position:relative}
+    .arrow::before{content:"";position:absolute;left:6px;right:10px;top:50%;border-top:2px solid var(--accent)}
+    .arrow::after{content:"";position:absolute;right:4px;top:calc(50% - 5px);border:5px solid transparent;border-left:8px solid var(--accent)}
+    .arrow span{position:relative;top:-14px;font-size:11px;color:var(--muted);background:var(--bg2);padding:0 4px;text-align:center;line-height:1.2}
+    .flow figcaption{color:var(--muted);font-size:13px;margin-top:4px}
+    .faq-static dt{color:var(--white);font-weight:600;font-size:17px;margin-top:20px}
+    .faq-static dd{color:#d6d6d6;font-size:16px;line-height:1.8;margin:6px 0 0}
+    .related{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:48px}
+    .related a{display:block;background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:20px;text-decoration:none;color:var(--text)}
+    .related a:hover{border-color:var(--accent)}
+    .related b{display:block;color:var(--white);margin-bottom:4px}
+    .related span{color:var(--muted);font-size:14px}
+    .posts{display:grid;grid-template-columns:repeat(2,1fr);gap:20px}
+    .post-card{display:block;background:var(--bg2);border:1px solid var(--border);border-radius:12px;padding:28px;text-decoration:none;color:var(--text);transition:border-color .2s}
+    .post-card:hover{border-color:var(--accent)}
+    .post-card h2{font-size:22px;margin:8px 0 10px}
+    .post-card p{color:var(--muted);font-size:15px;line-height:1.7}
+    .post-card .more{color:var(--accent);font-weight:600;font-size:14px;margin-top:14px;display:inline-block}
+    .facts{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:12px;margin:24px 0 8px}
+    .facts div{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:14px 16px}
+    .facts b{display:block;font-size:12px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+    .facts span{font-size:14px;color:var(--text)}
+    .shot{margin:8px 0 24px}
+    .shot img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--border)}
+    .shot figcaption{color:var(--muted);font-size:13px;margin-top:8px}
+    .shots-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:560px}
+    .more-posts{margin-top:48px}
+    .more-posts h2{margin-top:0}
+    .more-posts ul{list-style:none;margin:0}
+    .more-posts li{border-top:1px solid var(--border);padding:14px 0;margin:0}
+    .more-posts a{color:var(--text);text-decoration:none;font-weight:500}
+    .more-posts a:hover{color:var(--accent)}
+    @media(max-width:768px){
+      .facts{grid-template-columns:1fr 1fr}
+      .shots-2{gap:12px}
+      .article{padding:0 20px 56px}
+      .article-hero{padding:40px 20px 24px}
+      .flow-row{flex-direction:column}
+      .arrow{flex:0 0 40px}
+      .arrow::before{left:50%;right:auto;top:4px;bottom:10px;border-top:0;border-left:2px solid var(--accent)}
+      .arrow::after{right:auto;left:calc(50% - 4px);top:auto;bottom:2px;border:5px solid transparent;border-top:8px solid var(--accent)}
+      .arrow span{top:auto;left:calc(50% + 14px);position:absolute;background:none;text-align:left}
+      .related,.posts{grid-template-columns:1fr}
+      .article table{min-width:0}
+      .article thead{display:none}
+      .article tr{display:block;border-top:1px solid var(--border);padding:12px 0}
+      .article tbody tr:first-child{border-top:0}
+      .article td{display:block;border:0;padding:4px 16px}
+      .article td[data-label]:not([data-label=""])::before{content:attr(data-label);display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;color:var(--accent);margin-bottom:2px}
+      .article td[data-label=""]{font-weight:600;color:var(--white);font-size:16px}
+      .shot a::after{content:"Нажмите, чтобы увеличить";display:block;font-size:12px;color:var(--muted);margin-top:6px}
+    }
+  </style>
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript">
+    (function(m,e,t,r,i,k,a){
+      m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+      m[i].l=1*new Date();
+      for (var j = 0; j < document.scripts.length; j++) {if (document.scripts[j].src === r) { return; }}
+      k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)
+    })(window, document, 'script', 'https://mc.yandex.ru/metrika/tag.js?id=113101565', 'ym');
+    ym(113101565, 'init', {ssr:true, webvisor:true, clickmap:true, accurateTrackBounce:true, trackLinks:true});
+  </script>
+  <!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<noscript><div><img src="https://mc.yandex.ru/watch/113101565" style="position:absolute; left:-9999px;" alt=""/></div></noscript>
+<header>
+  <a class="logo" href="/"><span>It</span> Компания</a>
+  <div class="header-btns">
+    <a href="/blog/" class="blog-link active" aria-current="page">Блог</a>
+    <a href="tel:+79850249319" class="icon-btn phone" aria-label="Позвонить">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+    </a>
+    <a href="https://t.me/manager379team" target="_blank" class="icon-btn tg" aria-label="Telegram">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.77l-1.9 8.96c-.14.63-.51.78-.97.49l-2.7-1.99-1.3 1.25c-.14.14-.27.27-.54.27l.19-2.73 4.96-4.48c.22-.19-.05-.3-.34-.11L7.6 14.47l-2.65-.83c-.58-.18-.59-.58.12-.86l10.36-3.99c.48-.18.9.11.5.98z" fill="currentColor"/></svg>
+    </a>
+  </div>
+</header>
+
+<div class="article-hero hero" style="margin:0 auto">
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Главная</a> → <a href="/blog/">Блог</a> → <span>CRM для детейлинга КарПас</span>
+  </nav>
+  <p class="eyebrow">Кейс · Мобильное приложение и CRM</p>
+  <h1>CRM для детейлинга и СТО КарПас: кейс разработки мобильного приложения</h1>
+  <p class="meta"><time datetime="2026-09-27">27 сентября 2026</time> · 6 минут чтения · It Компания</p>
+</div>
+
+<article class="article">
+<p class="lead">КарПас — наш собственный продукт: цифровая история обслуживания автомобиля. Для владельца это гараж в телефоне, где хранятся визиты, пробег, фото и документы. Для детейлинга и СТО — CRM с клиентами, автомобилями и фотоотчётами, которую клиент видит в своём телефоне. Обе стороны видят одну и ту же историю. Рассказываем, какую задачу решали, как устроен продукт и какие решения приняли по ходу.</p>
+
+<div class="facts">
+  <div><b>Продукт</b><span>история авто + CRM для сервисов</span></div>
+  <div><b>Платформы</b><span>iOS, Android, веб</span></div>
+  <div><b>Для кого</b><span>автовладельцы, детейлинг, СТО</span></div>
+  <div><b>Срок</b><span>3 месяца — разработка и тесты</span></div>
+  <div><b>Сайт</b><span><a href="https://carpasss.ru" target="_blank" rel="noopener">carpasss.ru</a></span></div>
+</div>
+
+<h2>Задача: история машины теряется, а клиенты не возвращаются</h2>
+<p>Мы увидели одну проблему с двух сторон.</p>
+<p><strong>Владелец автомобиля</strong> через год уже не помнит, когда меняли масло, что делали при полировке и при каком пробеге. Чеки теряются. При продаже подтвердить уход за машиной нечем, и покупатель торгуется «на всякий случай».</p>
+<p><strong>Детейлинг и автосервис</strong> теряют клиентов не из-за качества работы:</p>
+<ul>
+  <li>клиент уехал, и у него нет повода вернуться — в следующий раз он поедет туда, где ближе или дешевле;</li>
+  <li>мастер уволился, и вместе с ним ушло знание о том, что делали с машиной и что рекомендовали;</li>
+  <li>обычная CRM закрыта от клиента: он не видит, что для него сделали, и не отличает этот сервис от соседнего;</li>
+  <li>повторные визиты случаются сами по себе — никто системно не напоминает и не записывает.</li>
+</ul>
+<p>Задача была сделать один продукт, в котором история автомобиля полезна и владельцу, и сервису, а клиент сам участвует в ней.</p>
+
+<h2>Решение: одна история автомобиля — два приложения</h2>
+<p>Мы сделали не классическую CRM, а общую историю, к которой у каждой стороны свой доступ.</p>
+<div class="table-wrap"><table>
+  <thead><tr><th>Сервис (детейлинг, СТО)</th><th>Владелец автомобиля</th></tr></thead>
+  <tbody>
+    <tr><td data-label="Сервис (детейлинг, СТО)">Заводит карточку клиента и автомобиля с телефона или компьютера</td><td data-label="Владелец автомобиля">Видит историю своего авто в приложении</td></tr>
+    <tr><td data-label="Сервис (детейлинг, СТО)">Вносит услуги и фото работ</td><td data-label="Владелец автомобиля">Смотрит фото, перечень работ и дату визита</td></tr>
+    <tr><td data-label="Сервис (детейлинг, СТО)">Оставляет рекомендацию мастера к визиту</td><td data-label="Владелец автомобиля">Видит совет мастера и сам нажимает «Записаться»</td></tr>
+    <tr><td data-label="Сервис (детейлинг, СТО)">Получает уведомление о записи и перезванивает</td><td data-label="Владелец автомобиля">Параллельно ведёт свою историю: ТО, мойки, ремонт</td></tr>
+  </tbody>
+</table></div>
+<p>Визит появляется у клиента сразу после того, как сервис его сохранил. Ничего пересылать не нужно.</p>
+
+<h2>Приложение владельца</h2>
+<figure class="shot">
+  <a href="/blog/keis-karpas/karpas-prilozhenie-vladelca.jpg" target="_blank" rel="noopener"><img src="/blog/keis-karpas/karpas-prilozhenie-vladelca.jpg" width="1400" height="857" loading="lazy" alt="Приложение КарПас для владельца: гараж, карточка автомобиля и история визитов"/></a>
+  <figcaption>Гараж, карточка автомобиля и история визитов в приложении владельца.</figcaption>
+</figure>
+<ul>
+  <li><strong>Гараж</strong> — все автомобили в одном месте, с фото, годом и пробегом.</li>
+  <li><strong>Карточка авто</strong> — госномер, VIN, пробег и последний визит.</li>
+  <li><strong>История визитов</strong> — одна лента, где собраны и свои записи, и визиты от сервиса. Фильтр переключает «Все», «От сервиса» и «Моя история».</li>
+  <li><strong>Фото и документы</strong> прикрепляются к каждому визиту.</li>
+</ul>
+<p>Вести историю можно и без сервиса: владелец сам вносит ТО, шиномонтаж, мойку или ремонт. Если его детейлинг подключится позже, визиты сервиса добавятся в ту же ленту.</p>
+
+<h2>CRM для детейлинг-центра и СТО</h2>
+<p>Со стороны сервиса КарПас — это CRM для детейлинг-центра, студии или СТО. Работать в ней можно с телефона и с компьютера.</p>
+<figure class="shot">
+  <a href="/blog/keis-karpas/karpas-crm-klienty.jpg" target="_blank" rel="noopener"><img src="/blog/keis-karpas/karpas-crm-klienty.jpg" width="1400" height="870" loading="lazy" alt="CRM КарПас для детейлинга: список клиентов и автомобилей, поиск по VIN и госномеру, карточка клиента"/></a>
+  <figcaption>Панель сервиса: клиенты, автомобили и последний визит. Данные на скриншоте демонстрационные.</figcaption>
+</figure>
+<ul>
+  <li><strong>Поиск по имени, телефону, VIN или госномеру</strong> — нужный клиент находится за пару секунд.</li>
+  <li><strong>Фильтр «Давно не были»</strong> — показывает клиентов, которые не приезжали больше 15 дней. Им можно напомнить о себе, пока они не ушли к конкуренту.</li>
+  <li><strong>Заметка о клиенте</strong> — предпочтения, удобное время звонка, важные детали. Информация остаётся в сервисе, даже если мастер сменился.</li>
+  <li><strong>Фотоотчёты «до/после»</strong> — сразу попадают в приложение клиента.</li>
+  <li><strong>Уведомления о записи</strong> — когда клиент нажимает «Записаться».</li>
+</ul>
+
+<h2>Запись в один тап</h2>
+<div class="shots-2">
+  <figure class="shot">
+    <img src="/blog/keis-karpas/karpas-vizit-rekomendaciya.jpg" width="480" height="1040" loading="lazy" alt="Визит в КарПас: фото работ детейлинга, перечень услуг и рекомендация мастера"/>
+    <figcaption>Визит с фото, услугами и рекомендацией мастера.</figcaption>
+  </figure>
+  <figure class="shot">
+    <img src="/blog/keis-karpas/karpas-zapis-v-servis.jpg" width="480" height="1040" loading="lazy" alt="Кнопка «Записаться» в приложении КарПас рядом с визитом от сервиса"/>
+    <figcaption>Кнопка «Записаться» рядом с визитом от сервиса.</figcaption>
+  </figure>
+</div>
+<p>Мастер оставляет рекомендацию, например: «В следующий раз делаем оклейку плёнкой, не царапайте лак». Клиент видит её в приложении, рядом — кнопка «Записаться». Сервис получает уведомление и перезванивает, когда удобно. Клиенту не нужно искать номер телефона, а сервису — ловить момент для звонка.</p>
+
+<h2>Решения, которые мы приняли по ходу</h2>
+<ul>
+  <li><strong>Подтверждённые визиты отдельно от личных записей.</strong> Запись, которую внёс сервис, владелец не может переписать задним числом. Поэтому ей доверяет покупатель при продаже машины. Личные записи хранятся рядом, но помечены как свои.</li>
+  <li><strong>История привязана к автомобилю, а не к владельцу.</strong> При продаже историю можно передать новому хозяину — в том числе через панель сервиса.</li>
+  <li><strong>Публичная ссылка со скрытыми данными.</strong> Владелец может показать историю покупателю по ссылке. Госномер и VIN в ней маскируются, а доступа к личному кабинету покупатель не получает.</li>
+  <li><strong>Черновик визита сохраняется автоматически.</strong> Если мастера отвлекли посреди заполнения, данные не пропадут.</li>
+  <li><strong>Публичная страница сервиса.</strong> Каждый подключённый детейлинг получает страницу с услугами, режимом работы, фото работ и кнопкой «Позвонить». Её можно указать в соцсетях и на картах — отдельный сайт на старте не нужен.</li>
+</ul>
+
+<h2>Что получилось</h2>
+<p>От старта разработки до готового продукта прошло 3 месяца, включая тестирование.</p>
+<ul>
+  <li>Мобильные приложения для iOS и Android и веб-версия — история одна на всех устройствах.</li>
+  <li>Две роли в одном продукте: владелец и сервис видят общую историю, но каждый со своими правами.</li>
+  <li>Первый автомобиль в гараже для владельцев бесплатный. Сервисы на этапе запуска подключаются бесплатно, с помощью в настройке.</li>
+</ul>
+<p>Продукт развивается: доработки под конкретный сервис мы обсуждаем с партнёрами напрямую.</p>
+
+<h2>Нужен похожий продукт?</h2>
+<p>КарПас — пример того, что мы делаем помимо сайтов: мобильные приложения, CRM и сервисы, где есть несколько ролей и общие данные. Если у вас есть идея продукта или внутренний процесс, который пора перевести из таблиц и мессенджеров в приложение, — расскажите о задаче. Посмотрите также наши услуги по <a href="/mobile/">разработке мобильных приложений</a>.</p>
+<h2>Частые вопросы</h2>
+<dl class="faq-static">
+  <dt>Где подключить CRM для детейлинга КарПас?</dt>
+  <dd>На сайте carpasss.ru. На этапе запуска подключение для детейлинг-центров и СТО бесплатное, помощь с настройкой включена.</dd>
+  <dt>Что такое КарПас?</dt>
+  <dd>Цифровая история обслуживания автомобиля. Владелец хранит визиты, пробег, фото и документы, а детейлинг или СТО ведут в том же сервисе CRM с клиентами и фотоотчётами.</dd>
+  <dt>Сколько времени заняла разработка КарПас?</dt>
+  <dd>3 месяца — разработка и тестирование мобильных приложений для iOS и Android, веб-версии и CRM для сервисов.</dd>
+  <dt>На каких платформах работает КарПас?</dt>
+  <dd>Мобильные приложения для iOS и Android, а также веб-версия. История автомобиля одна на всех устройствах.</dd>
+  <dt>Можно ли заказать у вас похожее приложение?</dt>
+  <dd>Да. Мы разрабатываем мобильные приложения, CRM и сервисы с несколькими ролями пользователей. Напишите нам в Telegram и опишите задачу.</dd>
+</dl>
+
+  <div class="related">
+    <a href="/mobile/"><b>Мобильные приложения</b><span>iOS и Android на React Native, от 180 000 ₽</span></a>
+    <a href="/crm/"><b>Интеграция CRM</b><span>AmoCRM и Bitrix24: заявки с сайта сразу у менеджера</span></a>
+  </div>
+  <nav class="more-posts" aria-label="Читайте также">
+    <h2>Читайте также</h2>
+    <ul>
+    <li><a href="/blog/skolko-stoit-sajt-na-tilda/">Сколько стоит сайт на Тильде в 2026 году: цены на создание, сроки и из чего складывается стоимость</a></li>
+    <li><a href="/blog/lending-ili-sajt/">Лендинг или сайт: что лучше выбрать для бизнеса</a></li>
+    <li><a href="/blog/kak-vybrat-razrabotchika-sajta/">Как выбрать разработчика сайта: 7 критериев и вопросы для первой встречи</a></li>
+    </ul>
+  </nav>
+</article>
+
+<div class="cta">
+  <h2>Нужно своё приложение или CRM?</h2>
+  <p>Расскажите об идее или процессе, который пора перевести в приложение. Разберём задачу и предложим, с чего начать.</p>
+  <a class="btn-primary" href="https://t.me/manager379team" target="_blank" rel="noopener">Написать в Telegram</a>
+</div>
+
+<footer>
+  <a class="footer-logo" href="/"><span>It</span> Компания</a>
+  <div style="display:flex;gap:12px">
+    <a href="tel:+79850249319" class="icon-btn phone" style="width:36px;height:36px" aria-label="Позвонить">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1-9.4 0-17-7.6-17-17 0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z" fill="currentColor"/></svg>
+    </a>
+    <a href="https://t.me/manager379team" target="_blank" class="icon-btn tg" style="width:36px;height:36px" aria-label="Telegram">
+      <svg width="18" height="18" viewBox="0 0 24 24" fill="none"><path d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zm4.93 6.77l-1.9 8.96c-.14.63-.51.78-.97.49l-2.7-1.99-1.3 1.25c-.14.14-.27.27-.54.27l.19-2.73 4.96-4.48c.22-.19-.05-.3-.34-.11L7.6 14.47l-2.65-.83c-.58-.18-.59-.58.12-.86l10.36-3.99c.48-.18.9.11.5.98z" fill="currentColor"/></svg>
+    </a>
+  </div>
+</footer>
+</body>
+</html>

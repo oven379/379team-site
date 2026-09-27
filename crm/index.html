@@ -90,8 +90,15 @@
     .footer-logo{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;color:var(--white);text-decoration:none}
     .footer-logo span{color:var(--accent)}
     @media(max-width:768px){.container{padding:0 20px}.hero{padding:40px 0}section{padding:56px 0}.grid-2{grid-template-columns:1fr}.process-steps{grid-template-columns:repeat(2,1fr)}.cta{padding:60px 0}.price-block{flex-direction:column;align-items:flex-start;gap:12px}}
-    .blog-link{color:var(--text);text-decoration:none;font-size:14px;font-weight:600;align-self:center;margin-right:4px}
-    .blog-link:hover{color:var(--accent)}
+    .blog-link{display:flex;align-items:center;height:40px;padding:0 18px;border-radius:20px;background:var(--bg3);border:1px solid var(--border);color:var(--text);text-decoration:none;font-size:14px;font-weight:600;transition:border-color .2s,color .2s}
+    .blog-link:hover,.blog-link.active{border-color:var(--accent);color:var(--accent)}
+    .read-more{max-width:1200px;margin:0 auto;padding:16px 60px 72px}
+    .read-more .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+    @media(max-width:768px){.read-more{padding:8px 20px 56px}}
+    .read-more ul{list-style:none;max-width:800px}
+    .read-more li{border-top:1px solid var(--border);padding:16px 0}
+    .read-more a{color:var(--text);text-decoration:none;font-size:17px;font-weight:500}
+    .read-more a:hover{color:var(--accent)}
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -162,6 +169,14 @@
     <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Что если сотрудники не будут пользоваться CRM?<span class="arr">+</span></button><div class="faq-a">Настраиваем CRM максимально просто и удобно, проводим обучение и записываем видео-инструкции. Первый месяц поддерживаем команду и отвечаем на все вопросы.</div></div>
   </div>
 </div></section>
+<section class="read-more" aria-label="Статьи по теме">
+  <p class="section-label">Полезно почитать</p>
+  <ul>
+    <li><a href="/blog/keis-karpas/">Кейс КарПас: мобильное приложение и CRM для детейлинга и автосервиса →</a></li>
+    <li><a href="/blog/ozon-dostavka-tilda/">Доставка Ozon в пункты выдачи на сайте Tilda →</a></li>
+  </ul>
+</section>
+
 <div class="cta"><div class="container">
   <h2>Перестаньте терять клиентов</h2>
   <p>Бесплатно проконсультируем и подберём оптимальную CRM для вашего бизнеса</p>

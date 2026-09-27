@@ -105,8 +105,15 @@
       footer{padding:16px 20px}
       .price-block{flex-direction:column;align-items:flex-start;gap:12px}
     }
-    .blog-link{color:var(--text);text-decoration:none;font-size:14px;font-weight:600;align-self:center;margin-right:4px}
-    .blog-link:hover{color:var(--accent)}
+    .blog-link{display:flex;align-items:center;height:40px;padding:0 18px;border-radius:20px;background:var(--bg3);border:1px solid var(--border);color:var(--text);text-decoration:none;font-size:14px;font-weight:600;transition:border-color .2s,color .2s}
+    .blog-link:hover,.blog-link.active{border-color:var(--accent);color:var(--accent)}
+    .read-more{max-width:1200px;margin:0 auto;padding:16px 60px 72px}
+    .read-more .section-label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:14px}
+    @media(max-width:768px){.read-more{padding:8px 20px 56px}}
+    .read-more ul{list-style:none;max-width:800px}
+    .read-more li{border-top:1px solid var(--border);padding:16px 0}
+    .read-more a{color:var(--text);text-decoration:none;font-size:17px;font-weight:500}
+    .read-more a:hover{color:var(--accent)}
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -270,7 +277,7 @@
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Нужно ли покупать подписку Tilda?<span class="arr">+</span></button>
-        <div class="faq-a">Для полноценного сайта на своём домене нужна подписка Tilda Personal (от 750 ₽/мес) или Business. Мы помогаем с выбором подходящего тарифа. Подписка оплачивается отдельно от стоимости разработки.</div>
+        <div class="faq-a">Для полноценного сайта на своём домене нужна подписка Tilda Personal (500 ₽/мес при оплате за год или 750 ₽ помесячно) или Business. Мы помогаем с выбором подходящего тарифа. Подписка оплачивается отдельно от стоимости разработки.</div>
       </div>
       <div class="faq-item">
         <button class="faq-q" onclick="toggleFaq(this)">Что нужно подготовить для начала работы?<span class="arr">+</span></button>
@@ -278,6 +285,14 @@
       </div>
     </div>
   </div>
+</section>
+
+<section class="read-more" aria-label="Статьи по теме">
+  <p class="section-label">Полезно почитать</p>
+  <ul>
+    <li><a href="/blog/lending-ili-sajt/">Лендинг или многостраничный сайт: что выбрать для бизнеса →</a></li>
+    <li><a href="/blog/skolko-stoit-sajt-na-tilda/">Сколько стоит сайт на Тильде в 2026 году →</a></li>
+  </ul>
 </section>
 
 <div class="cta">
