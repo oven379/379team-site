@@ -113,6 +113,8 @@
     .read-more li{border-top:1px solid var(--border);padding:16px 0}
     .read-more a{color:var(--text);text-decoration:none;font-size:17px;font-weight:500}
     .read-more a:hover{color:var(--accent)}
+    h1{overflow-wrap:break-word}
+    @media(max-width:380px){h1{font-size:30px;letter-spacing:-.5px}}
     .article{max-width:780px;margin:0 auto;padding:0 60px 80px}
     .article-hero{max-width:780px;padding:64px 60px 32px}
     .article-hero h1{font-size:clamp(30px,4.2vw,50px);letter-spacing:-1px;line-height:1.1}
@@ -163,12 +165,16 @@
     .shot img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--border)}
     .shot figcaption{color:var(--muted);font-size:13px;margin-top:8px}
     .shots-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:560px}
+    .article pre.template{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:8px 0 24px;color:#d6d6d6;font-size:14px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
+    .article code{background:var(--bg3);border-radius:4px;padding:1px 6px;font-size:.9em}
     .more-posts{margin-top:48px}
     .more-posts h2{margin-top:0}
     .more-posts ul{list-style:none;margin:0}
     .more-posts li{border-top:1px solid var(--border);padding:14px 0;margin:0}
     .more-posts a{color:var(--text);text-decoration:none;font-weight:500}
     .more-posts a:hover{color:var(--accent)}
+    h1{overflow-wrap:break-word}
+    @media(max-width:380px){h1{font-size:30px;letter-spacing:-.5px}}
     @media(max-width:768px){
       .facts{grid-template-columns:1fr 1fr}
       .shots-2{gap:12px}
