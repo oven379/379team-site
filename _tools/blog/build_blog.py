@@ -142,9 +142,18 @@ ALL_POSTS = ALL_POSTS + PLAN_POSTS
 import datetime
 # Статьи с датой в будущем не публикуются, пока дата не наступит.
 # Предпросмотр всех статей: BLOG_PREVIEW=1 python3 _tools/blog/build_blog.py
-TODAY = os.environ.get('BLOG_TODAY') or datetime.date.today().isoformat()  # BLOG_TODAY — только для проверки
+# Статья выходит в день своей даты в PUBLISH_HOUR по Москве (UTC+3, без перехода на летнее время),
+# независимо от часового пояса сервера. BLOG_TODAY=ГГГГ-ММ-ДД — «машина времени» только для проверки.
+PUBLISH_HOUR = 10
+NOW_MSK = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=3)))
+if os.environ.get('BLOG_TODAY'):
+    TODAY, PUBLISHED_TODAY = os.environ['BLOG_TODAY'], True
+else:
+    TODAY, PUBLISHED_TODAY = NOW_MSK.date().isoformat(), NOW_MSK.hour >= PUBLISH_HOUR
 PREVIEW = os.environ.get('BLOG_PREVIEW') == '1'
-POSTS = sorted([p for p in ALL_POSTS if PREVIEW or p['date'] <= TODAY], key=lambda p: p['date'], reverse=True)
+def is_live(p):
+    return PREVIEW or p['date'] < TODAY or (p['date'] == TODAY and PUBLISHED_TODAY)
+POSTS = sorted([p for p in ALL_POSTS if is_live(p)], key=lambda p: p['date'], reverse=True)
 SITE = 'https://itcompania.ru'
 BURL = f'{SITE}/blog/'
 
