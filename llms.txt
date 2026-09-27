@@ -99,25 +99,24 @@ CRM: AmoCRM, Bitrix24
 
 Телефон: +7 (985) 024-93-19
 Telegram: https://t.me/manager379team
-Сайт: https://379team.ru
+Сайт: https://itcompania.ru
 
 ## Разделы сайта
 
-- [Главная](https://379team.ru/)
-- [Услуги — Лендинг](https://379team.ru/#services)
-- [Услуги — Многостраничный сайт](https://379team.ru/#services)
-- [Услуги — Интернет-магазин](https://379team.ru/#services)
-- [Услуги — Онлайн-курс](https://379team.ru/#services)
-- [Услуги — Детейлинг](https://379team.ru/#services)
-- [Услуги — CRM](https://379team.ru/#services)
-- [Услуги — Брендинг](https://379team.ru/#services)
-- [Услуги — Соцсети](https://379team.ru/#services)
-- [Услуги — SEO](https://379team.ru/#services)
-- [Услуги — Digital-продукт](https://379team.ru/#services)
-- [Услуги — DevOps](https://379team.ru/#services)
-- [Услуги — Мобильные приложения](https://379team.ru/#services)
-- [Цены](https://379team.ru/#pricing)
-- [Как работаем](https://379team.ru/#process)
-- [FAQ](https://379team.ru/#faq)
-- [Правила работы](https://379team.ru/conditions)
-- [Инвесторам](https://379team.ru/investors/)
+- [Главная](https://itcompania.ru/)
+- [Лендинг на Tilda](https://itcompania.ru/lending/)
+- [Многостраничный сайт на Tilda](https://itcompania.ru/mnogostrannichny-sajt/)
+- [Интернет-магазин на Tilda](https://itcompania.ru/internet-magazin/)
+- [Сайт под ключ без участия клиента](https://itcompania.ru/busyclient/)
+- [Детейлинг сайта](https://itcompania.ru/detailing/)
+- [Интеграция CRM](https://itcompania.ru/crm/)
+- [Брендинг и фирменный стиль](https://itcompania.ru/branding/)
+- [Оформление соцсетей](https://itcompania.ru/socseti/)
+- [SEO и контекстная реклама](https://itcompania.ru/seo/)
+- [Мобильные приложения](https://itcompania.ru/mobile/)
+- [Все услуги (включая онлайн-курсы, Digital-продукт, DevOps)](https://itcompania.ru/#services)
+- [Блог](https://itcompania.ru/blog/)
+- [Статья: доставка Ozon в пункты выдачи на сайте Tilda](https://itcompania.ru/blog/ozon-dostavka-tilda/)
+- [Цены](https://itcompania.ru/#pricing)
+- [Как работаем](https://itcompania.ru/#process)
+- [FAQ](https://itcompania.ru/#faq)

@@ -49,4 +49,4 @@ Allow: /
 User-agent: DuckAssistBot
 Allow: /
 
-Sitemap: https://379team.ru/sitemap.xml
+Sitemap: https://itcompania.ru/sitemap.xml
