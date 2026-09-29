@@ -154,6 +154,7 @@
     @media(max-width:768px){.cases-grid,.sites-grid{grid-template-columns:1fr}.process-wrap{padding:0 20px}}
     @media(max-width:400px){.process-steps{grid-template-columns:1fr}}
   </style>
+  <style>[data-publish]:not(a){display:none!important}</style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -290,6 +291,13 @@
   </div>
 </section>
 
+<section class="read-more" aria-label="Статьи по теме" data-list-box>
+  <p class="section-label">Полезно почитать</p>
+  <ul data-list="3">
+    <li data-publish="2026-11-10"><a href="/blog/tilda-amocrm/">Как подключить amoCRM к Тильде: заявки с сайта сразу в CRM →</a></li>
+  </ul>
+</section>
+
 <div class="cta">
   <h2>Обсудим вашего бота</h2>
   <p>Напишите в Telegram, что должен делать бот, — предложим сценарий и оценим бесплатно.</p>
@@ -312,5 +320,6 @@
 <script>
 function toggleFaq(btn){const a=btn.nextElementSibling;const open=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!open){a.classList.add('open');btn.classList.add('open');}}
 </script>
+<script src="/assets/publish.js" defer></script>
 </body>
 </html>

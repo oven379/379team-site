@@ -154,6 +154,7 @@
     @media(max-width:768px){.cases-grid,.sites-grid{grid-template-columns:1fr}.process-wrap{padding:0 20px}}
     @media(max-width:400px){.process-steps{grid-template-columns:1fr}}
   </style>
+  <style>[data-publish]:not(a){display:none!important}</style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -303,10 +304,12 @@
   </div>
 </section>
 
-<section class="read-more" aria-label="Статьи по теме">
+<section class="read-more" aria-label="Статьи по теме" data-list-box>
   <p class="section-label">Полезно почитать</p>
-  <ul>
-    <li><a href="/blog/skolko-stoit-sajt-na-tilda/">Сколько стоит сайт на Тильде в 2026 году: цены на создание, сроки и из чего складывается стоимость →</a></li>
+  <ul data-list="3">
+    <li data-publish="2026-10-22"><a href="/blog/oplata-na-tilde/">Как подключить оплату на Тильде: платёжные системы, корзина и кнопка оплаты →</a></li>
+    <li data-publish="2026-10-08"><a href="/blog/kak-sdelat-sajt-na-tilde/">Как сделать сайт на Тильде самостоятельно: пошаговая инструкция →</a></li>
+    <li data-publish="2026-09-27"><a href="/blog/skolko-stoit-sajt-na-tilda/">Сколько стоит сайт на Тильде в 2026 году: цены на создание, сроки и из чего складывается стоимость →</a></li>
   </ul>
 </section>
 
@@ -332,5 +335,6 @@
 <script>
 function toggleFaq(btn){const a=btn.nextElementSibling;const open=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!open){a.classList.add('open');btn.classList.add('open');}}
 </script>
+<script src="/assets/publish.js" defer></script>
 </body>
 </html>

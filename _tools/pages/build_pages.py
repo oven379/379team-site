@@ -112,6 +112,7 @@ def head(title, desc, url, lds):
   <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"/>{ld}
 {fonts}
 {style_full}
+  <style>[data-publish]:not(a){{display:none!important}}</style>
 </head>
 <body>
 {header}
@@ -121,6 +122,7 @@ TAIL = f'''
 {footer}
 
 {script}
+<script src="/assets/publish.js" defer></script>
 </body>
 </html>
 '''
@@ -180,11 +182,11 @@ def build_service(P):
     inc = ''.join(f'\n    <div class="include-item">\n      <h3>{h}</h3>\n      <p>{t}</p>\n    </div>' for h, t in P['includes'])
     steps = ''.join(f'\n      <div class="step">\n        <div class="step-num">{i+1:02d}</div>\n        <h3>{h}</h3>\n        <p>{t}</p>\n      </div>' for i, (h, t) in enumerate(P['steps']))
     faq = ''.join(f'\n      <div class="faq-item">\n        <button class="faq-q" onclick="toggleFaq(this)">{q}<span class="arr">+</span></button>\n        <div class="faq-a">{a}</div>\n      </div>' for q, a in P['faq'])
-    reads = [s for s in P.get('blog', []) if blog_live(s)]
+    reads = [s for s in P.get('blog', []) if s in BLOG]
     read_html = ''
     if reads:
-        items = ''.join(f'\n    <li><a href="/blog/{s}/">{BLOG[s]["h1"]} →</a></li>' for s in reads)
-        read_html = f'\n<section class="read-more" aria-label="Статьи по теме">\n  <p class="section-label">Полезно почитать</p>\n  <ul>{items}\n  </ul>\n</section>\n'
+        items = ''.join(f'\n    <li data-publish="{BLOG[s]["date"]}"><a href="/blog/{s}/">{BLOG[s]["h1"]} →</a></li>' for s in reads)
+        read_html = f'\n<section class="read-more" aria-label="Статьи по теме" data-list-box>\n  <p class="section-label">Полезно почитать</p>\n  <ul data-list="3">{items}\n  </ul>\n</section>\n'
     extra = f'\n  <a class="extra-link" href="{P["extra_link"][0]}">{P["extra_link"][1]}</a>' if P.get('extra_link') else ''
     h2, ctap = P['cta']
     page = head(P['title'], P['desc'], url, lds) + f'''

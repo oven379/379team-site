@@ -140,23 +140,24 @@ from posts import POSTS as ALL_POSTS, TG
 from posts_plan import PLAN_POSTS
 ALL_POSTS = ALL_POSTS + PLAN_POSTS
 import datetime
-# Статьи с датой в будущем не публикуются, пока дата не наступит.
-# Предпросмотр всех статей: BLOG_PREVIEW=1 python3 _tools/blog/build_blog.py
-# Статья выходит в день своей даты в PUBLISH_HOUR по Москве (UTC+3, без перехода на летнее время),
-# независимо от часового пояса сервера. BLOG_TODAY=ГГГГ-ММ-ДД — «машина времени» только для проверки.
+# Публикация по таймеру без сервера: собираются ВСЕ статьи, а показывает их посетителям
+# скрипт /assets/publish.js — в дату статьи в 10:00 по Москве (UTC+3).
+# Карта сайта, llms.txt и JSON-LD блога содержат статьи, вышедшие на момент сборки,
+# и обновляются при следующей выгрузке сайта на сервер.
 PUBLISH_HOUR = 10
 NOW_MSK = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=3)))
-if os.environ.get('BLOG_TODAY'):
-    TODAY, PUBLISHED_TODAY = os.environ['BLOG_TODAY'], True
-else:
-    TODAY, PUBLISHED_TODAY = NOW_MSK.date().isoformat(), NOW_MSK.hour >= PUBLISH_HOUR
-PREVIEW = os.environ.get('BLOG_PREVIEW') == '1'
+TODAY = NOW_MSK.date().isoformat()
 def is_live(p):
-    return PREVIEW or p['date'] < TODAY or (p['date'] == TODAY and PUBLISHED_TODAY)
-POSTS = sorted([p for p in ALL_POSTS if is_live(p)], key=lambda p: p['date'], reverse=True)
+    return p['date'] < TODAY or (p['date'] == TODAY and NOW_MSK.hour >= PUBLISH_HOUR)
+ALL_SORTED = sorted(ALL_POSTS, key=lambda p: p['date'], reverse=True)
+POSTS = [p for p in ALL_SORTED if is_live(p)]          # вышли на момент сборки
+DATES = {p['slug']: p['date'] for p in ALL_POSTS}
 SITE = 'https://itcompania.ru'
 BURL = f'{SITE}/blog/'
-
+PUBLISH_JS = '\n<script src="/assets/publish.js" defer></script>'
+PUBLISH_CSS = ('\n  <style>[data-publish]:not(a){display:none!important}'
+               '.gate-msg{display:none}.gated .gate-msg{display:block}'
+               '.gated .article,.gated .article-hero .meta,.gated .cta{display:none}</style>')
 
 def mobile_tables(html_):
     """Добавляет data-label к ячейкам: на телефоне строка таблицы показывается карточкой."""
@@ -174,6 +175,19 @@ def zoomable(html_):
     return re.sub(r'(<figure class="shot">\s*)(<img src="([^"]+)" width="(\d+)"[^>]*/>)',
                   lambda m: m.group(1) + (f'<a href="{m.group(3)}" target="_blank" rel="noopener">{m.group(2)}</a>' if int(m.group(4)) > 1000 else m.group(2)), html_)
 
+def mark_links(html_):
+    """Ссылки на статьи блога помечаем датой выхода: до неё publish.js покажет их обычным текстом."""
+    return re.sub(r'<a href="/blog/([a-z0-9-]+)/">',
+                  lambda m: f'<a href="/blog/{m.group(1)}/" data-publish="{DATES[m.group(1)]}" data-inline>' if m.group(1) in DATES else m.group(0), html_)
+
+def with_timer(page, gate=None):
+    """Подключает таймер публикации к странице; gate — дата, до которой скрыт текст статьи."""
+    page = page.replace('</head>', PUBLISH_CSS + '\n</head>', 1)
+    if gate:
+        page = page.replace('<html lang="ru">', f'<html lang="ru" data-gate="{gate}">', 1)
+        page = page.replace('</head>', f"<script>if(new Date('{gate}T10:00:00+03:00')>new Date())document.documentElement.classList.add('gated')</script>\n</head>", 1)
+    return page.replace('</body>', PUBLISH_JS + '\n</body>', 1)
+
 def crumbs(*items):
     return {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]}
@@ -190,15 +204,13 @@ def build_post(A):
         {"@context": "https://schema.org", "@type": "FAQPage", "mainEntity": [
             {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in A['faq']]},
     ]
-    body = zoomable(mobile_tables(open(f"{SCR}/posts/{A['slug']}.html", encoding='utf-8').read()))
-    # Ссылки на ещё не вышедшие статьи превращаем в обычный текст — без битых ссылок
-    live = {p['slug'] for p in POSTS}
-    body = re.sub(r'<a href="/blog/([a-z0-9-]+)/">(.*?)</a>', lambda m: m.group(0) if m.group(1) in live else m.group(2), body)
+    body = mark_links(zoomable(mobile_tables(open(f"{SCR}/posts/{A['slug']}.html", encoding='utf-8').read())))
     faq_html = '<h2>Частые вопросы</h2>\n' if '<h2>Частые вопросы</h2>' not in body else ''
     faq_html += '<dl class="faq-static">\n' + ''.join(f'  <dt>{q}</dt>\n  <dd>{a}</dd>\n' for q, a in A['faq']) + '</dl>\n'
     related = ''.join(f'\n    <a href="{h}"><b>{t}</b><span>{s}</span></a>' for h, t, s in A['related'])
-    others = [p for p in POSTS if p['slug'] != A['slug']][:3]
-    more = ''.join(f'\n    <li><a href="/blog/{p["slug"]}/">{p["h1"]}</a></li>' for p in others)
+    # «Читайте также»: все остальные статьи, показываются 3 последних вышедших
+    others = [p for p in ALL_SORTED if p['slug'] != A['slug']]
+    more = ''.join(f'\n    <li data-publish="{p["date"]}"><a href="/blog/{p["slug"]}/">{p["h1"]}</a></li>' for p in others)
     h2, ctap = A['cta']
     page = head(A['title'], A['desc'], url, 'article', lds, img) + f'''
 <div class="article-hero hero" style="margin:0 auto">
@@ -208,15 +220,17 @@ def build_post(A):
   <p class="eyebrow">{A['eyebrow']}</p>
   <h1>{A['h1']}</h1>
   <p class="meta"><time datetime="{A['date']}">{A['date_h']}</time> · {A['read']} чтения · It Компания</p>
+  <div class="gate-msg"><p class="hero-sub">Статья выйдет {A['date_h']} в 10:00 по Москве.</p><p class="meta" id="gate-msg"></p>
+  <p style="margin-top:20px"><a class="btn-primary" href="/blog/">Все статьи блога</a></p></div>
 </div>
 
 <article class="article">
 {body}{faq_html}
   <div class="related">{related}
   </div>
-  <nav class="more-posts" aria-label="Читайте также">
+  <nav class="more-posts" aria-label="Читайте также" data-list-box>
     <h2>Читайте также</h2>
-    <ul>{more}
+    <ul data-list="3">{more}
     </ul>
   </nav>
 </article>
@@ -228,9 +242,9 @@ def build_post(A):
 </div>
 ''' + TAIL
     os.makedirs(f"{ROOT}/blog/{A['slug']}", exist_ok=True)
-    open(f"{ROOT}/blog/{A['slug']}/index.html", 'w').write(add_metrika(page))
+    open(f"{ROOT}/blog/{A['slug']}/index.html", 'w', encoding='utf-8').write(add_metrika(with_timer(page, gate=A['date'])))
 
-for A in POSTS:
+for A in ALL_SORTED:
     build_post(A)
 
 blds = [
@@ -239,12 +253,12 @@ blds = [
     crumbs(("Главная", f"{SITE}/"), ("Блог", BURL)),
 ]
 cards = ''.join(f'''
-  <a class="post-card" href="/blog/{p['slug']}/">
+  <a class="post-card" href="/blog/{p['slug']}/" data-publish="{p['date']}">
     <span class="meta"><time datetime="{p['date']}">{p['date_h']}</time> · {p['read']}</span>
     <h2>{p['h1']}</h2>
     <p>{p['card']}</p>
     <span class="more">Читать →</span>
-  </a>''' for p in POSTS)
+  </a>''' for p in ALL_SORTED)
 bpage = head('Блог о разработке сайтов на Tilda, приложений и интеграций | It Компания',
              'Статьи и кейсы It Компании: сколько стоит сайт на Tilda, как выбрать формат сайта и разработчика, интеграции с Ozon и CRM, разработка мобильных приложений.',
              BURL, 'website', blds) + f'''
@@ -255,35 +269,27 @@ bpage = head('Блог о разработке сайтов на Tilda, прил
   <p class="hero-sub">Рассказываем, сколько стоит сайт, как выбрать формат и подрядчика, и показываем наши проекты: интеграции, приложения, CRM.</p>
 </div>
 <section style="padding-top:0">
-  <div class="posts">{cards}
+  <div class="posts" data-list="999">{cards}
   </div>
 </section>
 ''' + TAIL
-open(f'{ROOT}/blog/index.html', 'w').write(add_metrika(bpage))
-print('опубликовано:', ', '.join(p['slug'] for p in POSTS))
-waiting = [p for p in ALL_POSTS if p not in POSTS]
-if waiting: print('ждут своей даты:', ', '.join(f"{p['slug']} ({p['date']})" for p in sorted(waiting, key=lambda p: p['date'])))
+# карточки блога: CSS прячет [data-publish], но для a.post-card нужен явный селектор
+bpage = with_timer(bpage).replace('[data-publish]:not(a){display:none!important}', '[data-publish]:not(a),a.post-card[data-publish]{display:none!important}', 1)
+open(f'{ROOT}/blog/index.html', 'w', encoding='utf-8').write(add_metrika(bpage))
+waiting = [p for p in ALL_SORTED if p not in POSTS]
+print('вышли:', ', '.join(p['slug'] for p in POSTS))
+if waiting: print('по таймеру:', ', '.join(f"{p['slug']} ({p['date']})" for p in reversed(waiting)))
 
-# Неопубликованные статьи не должны лежать на сайте (например, после предпросмотра)
-import shutil
-for p in waiting:
-    d = f"{ROOT}/blog/{p['slug']}"
-    if not PREVIEW and os.path.exists(f'{d}/index.html'):
-        os.remove(f'{d}/index.html')
-    if not PREVIEW and os.path.isdir(d) and not os.listdir(d):
-        os.rmdir(d)
-
-# Карта сайта и llms.txt: блок блога пересобирается из опубликованных статей
-if not PREVIEW:
-    sm = open(f'{ROOT}/sitemap.xml', encoding='utf-8').read()
-    sm = re.sub(r'  <url><loc>https://itcompania.ru/blog/.*?</url>\n', '', sm)
-    rows = [f'  <url><loc>{BURL}</loc><lastmod>{POSTS[0]["date"] if POSTS else TODAY}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>']
-    rows += [f'  <url><loc>{BURL}{p["slug"]}/</loc><lastmod>{p.get("modified", p["date"])}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>' for p in POSTS]
-    open(f'{ROOT}/sitemap.xml', 'w', encoding='utf-8').write(sm.replace('</urlset>', '\n'.join(rows) + '\n</urlset>'))
-    ll = open(f'{ROOT}/llms.txt', encoding='utf-8').read()
-    ll = re.sub(r'- \[Статья: [^\n]*\n', '', ll)
-    ll = ll.replace('- [Блог](https://itcompania.ru/blog/)\n', '- [Блог](https://itcompania.ru/blog/)\n' + ''.join(f'- [Статья: {p["h1"]}]({BURL}{p["slug"]}/)\n' for p in POSTS), 1)
-    open(f'{ROOT}/llms.txt', 'w', encoding='utf-8').write(ll)
+# Карта сайта и llms.txt — статьи, вышедшие на момент сборки (обновятся при следующей выгрузке)
+sm = open(f'{ROOT}/sitemap.xml', encoding='utf-8').read()
+sm = re.sub(r'  <url><loc>https://itcompania.ru/blog/.*?</url>\n', '', sm)
+rows = [f'  <url><loc>{BURL}</loc><lastmod>{POSTS[0]["date"] if POSTS else TODAY}</lastmod><changefreq>weekly</changefreq><priority>0.7</priority></url>']
+rows += [f'  <url><loc>{BURL}{p["slug"]}/</loc><lastmod>{p.get("modified", p["date"])}</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>' for p in POSTS]
+open(f'{ROOT}/sitemap.xml', 'w', encoding='utf-8').write(sm.replace('</urlset>', '\n'.join(rows) + '\n</urlset>'))
+ll = open(f'{ROOT}/llms.txt', encoding='utf-8').read()
+ll = re.sub(r'- \[Статья: [^\n]*\n', '', ll)
+ll = ll.replace('- [Блог](https://itcompania.ru/blog/)\n', '- [Блог](https://itcompania.ru/blog/)\n' + ''.join(f'- [Статья: {p["h1"]}]({BURL}{p["slug"]}/)\n' for p in POSTS), 1)
+open(f'{ROOT}/llms.txt', 'w', encoding='utf-8').write(ll)
 
 exec(open(f"{SCR}/page404.py", encoding="utf-8").read())
 exec(open(f"{SCR}/admin.py", encoding="utf-8").read())

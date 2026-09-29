@@ -154,6 +154,7 @@
     @media(max-width:768px){.cases-grid,.sites-grid{grid-template-columns:1fr}.process-wrap{padding:0 20px}}
     @media(max-width:400px){.process-steps{grid-template-columns:1fr}}
   </style>
+  <style>[data-publish]:not(a){display:none!important}</style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
     (function(m,e,t,r,i,k,a){
@@ -301,10 +302,12 @@
   </div>
 </section>
 
-<section class="read-more" aria-label="Статьи по теме">
+<section class="read-more" aria-label="Статьи по теме" data-list-box>
   <p class="section-label">Полезно почитать</p>
-  <ul>
-    <li><a href="/blog/kak-vybrat-razrabotchika-sajta/">Как выбрать разработчика сайта: 7 критериев и вопросы для первой встречи →</a></li>
+  <ul data-list="3">
+    <li data-publish="2026-10-29"><a href="/blog/tilda-ili-wordpress/">Тильда или WordPress: что лучше выбрать для сайта компании →</a></li>
+    <li data-publish="2026-10-13"><a href="/blog/tehnicheskoe-zadanie-na-sajt/">Техническое задание на разработку сайта: пример и шаблон →</a></li>
+    <li data-publish="2026-09-27"><a href="/blog/kak-vybrat-razrabotchika-sajta/">Как выбрать разработчика сайта: 7 критериев и вопросы для первой встречи →</a></li>
   </ul>
 </section>
 
@@ -330,5 +333,6 @@
 <script>
 function toggleFaq(btn){const a=btn.nextElementSibling;const open=a.classList.contains('open');document.querySelectorAll('.faq-a').forEach(x=>x.classList.remove('open'));document.querySelectorAll('.faq-q').forEach(x=>x.classList.remove('open'));if(!open){a.classList.add('open');btn.classList.add('open');}}
 </script>
+<script src="/assets/publish.js" defer></script>
 </body>
 </html>
