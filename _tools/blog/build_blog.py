@@ -286,3 +286,4 @@ if not PREVIEW:
     open(f'{ROOT}/llms.txt', 'w', encoding='utf-8').write(ll)
 
 exec(open(f"{SCR}/page404.py", encoding="utf-8").read())
+exec(open(f"{SCR}/admin.py", encoding="utf-8").read())

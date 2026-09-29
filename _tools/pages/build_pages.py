@@ -347,7 +347,7 @@ for slug, tag in INJECT.items():
     f = f'{ROOT}/{slug}/index.html'
     s = open(f, encoding='utf-8').read()
     block = cases_for(tag)
-    s = re.sub(r'\n<!-- cases:start -->.*?<!-- cases:end -->\n', '\n', s, flags=re.S)
+    s = re.sub(r'<!-- cases:start -->.*?<!-- cases:end -->\n\n', '', s, flags=re.S)
     s = re.sub(r'\n    /\* cases-css:start \*/.*?/\* cases-css:end \*/\n', '\n', s, flags=re.S)
     if block:
         anchor = '<section class="read-more"' if '<section class="read-more"' in s else '<div class="cta">'

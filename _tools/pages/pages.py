@@ -60,7 +60,7 @@ PAGES = [
             ('Что выбрать: Laravel или Go?', 'Laravel подходит для большинства бизнес-систем — порталов, кабинетов, CRM. Go выбираем для высоких нагрузок и сервисов, где важна скорость обработки. Подскажем после аналитики.'),
         ],
         steps_title='Этапы разработки веб-приложения',
-        tags=['webapp'], blog=['skolko-stoit-razrabotka-prilozheniya', 'keis-karpas', 'tilda-ili-wordpress'],
+        tags=['webapp'], blog=['protsess-razrabotki-veb-prilozheniya', 'skolko-stoit-razrabotka-prilozheniya', 'keis-karpas'],
         cta=('Расскажите о вашем продукте', 'Опишите идею или процесс в Telegram — разберём задачу и предложим, с какой версии начать.'),
     ),
     dict(

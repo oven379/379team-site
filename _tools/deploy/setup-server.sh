@@ -55,6 +55,20 @@ python3 _tools/pages/build_pages.py
 git log -1 --format='версия: %h %s'
 
 say "5. Настраиваю nginx"
+# Пароль админки /admin/ не хранится в репозитории: его вводит владелец при запуске скрипта.
+# Сменить позже: sh /root/setup-site.sh --admin-password
+HT=/etc/nginx/.htpasswd-itcompania
+ADMIN_SET=""
+if [ ! -f "$HT" ] || [ "${1:-}" = "--admin-password" ]; then
+  command -v openssl >/dev/null || fail "Нет openssl для пароля админки. Установите: apt install -y openssl"
+  printf "Придумайте пароль для админки https://itcompania.ru/admin/ (логин будет admin): "
+  stty -echo 2>/dev/null || true; read -r ADMIN_PASS; stty echo 2>/dev/null || true; echo
+  [ -n "$ADMIN_PASS" ] || fail "Пароль не может быть пустым."
+  printf 'admin:%s\n' "$(openssl passwd -apr1 "$ADMIN_PASS")" > "$HT"
+  unset ADMIN_PASS
+  chmod 640 "$HT"; chown root:www-data "$HT" 2>/dev/null || true
+  ADMIN_SET=1
+fi
 python3 - "$CONF" <<'PY'
 import re, sys
 path = sys.argv[1]
@@ -63,10 +77,13 @@ MARK = '# itcompania-deploy'
 if MARK not in s:
     rule = ('\n    ' + MARK + ': служебные файлы не отдаём (кроме .well-known для SSL), настоящая страница 404\n'
             '    location ~ (^/\\.(?!well-known/)|^/_tools/|^/Dockerfile$|^/nginx\\.conf$) { return 404; }\n'
-            '    error_page 404 /404.html;\n')
+            '    error_page 404 /404.html;\n'
+            '    location ^~ /admin/ { limit_req zone=itc_admin burst=5 nodelay; auth_basic "itcompania admin"; auth_basic_user_file /etc/nginx/.htpasswd-itcompania; try_files $uri $uri/ =404; }\n')
     s, n = re.subn(r'(^[ \t]*root[ \t]+[^;]+;[ \t]*\n)', lambda m: m.group(1) + rule, s, flags=re.M)
     if not n:
         sys.exit('не нашёл строку root в настройках nginx')
+    # не больше 10 попыток входа в админку в минуту с одного адреса
+    s = '# itcompania-deploy: ограничение попыток входа в /admin/\nlimit_req_zone $binary_remote_addr zone=itc_admin:1m rate=10r/m;\n\n' + s
 # несуществующие адреса — 404, а не главная страница
 s = s.replace('try_files $uri $uri/ /index.html;', 'try_files $uri $uri/ =404;')
 open(path, 'w', encoding='utf-8').write(s)
@@ -87,9 +104,15 @@ JOB="*/10 * * * * sh $SITE/_tools/deploy/update-site.sh >> /var/log/itcompania-u
 echo "$JOB"
 
 say "Проверка"
-for u in / /blog/ /.git/config /_tools/blog/README.md /nesuschestvuet/; do
+for u in / /blog/ /.git/config /_tools/blog/README.md /nesuschestvuet/ /admin/; do
   printf '%-26s %s\n' "$u" "$(curl -s -o /dev/null -w '%{http_code}' "https://itcompania.ru$u" || echo ошибка)"
 done
 echo
-echo "Ожидается: /  и /blog/ — 200, остальные — 404."
+echo "Ожидается: /  и /blog/ — 200, /admin/ — 401 (нужен пароль), остальные — 404."
 echo "Готово. Дальше сайт обновляется сам через 10 минут после Push на GitHub."
+echo
+if [ -n "$ADMIN_SET" ]; then
+  echo "Админка: https://itcompania.ru/admin/  — логин admin и пароль, который вы ввели."
+else
+  echo "Админка: https://itcompania.ru/admin/ (пароль прежний; сменить: sh /root/setup-site.sh --admin-password)"
+fi
