@@ -12,3 +12,4 @@ cd "$SITE_DIR"
 git fetch -q origin main
 git reset -q --hard origin/main
 python3 _tools/blog/build_blog.py > /dev/null
+python3 _tools/pages/build_pages.py > /dev/null

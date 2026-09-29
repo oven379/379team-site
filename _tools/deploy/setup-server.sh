@@ -51,6 +51,7 @@ echo "nginx: /root/nginx-itcompania.conf.backup-$STAMP"
 say "4. Обновляю сайт до версии с GitHub"
 git reset -q --hard origin/main
 python3 _tools/blog/build_blog.py
+python3 _tools/pages/build_pages.py
 git log -1 --format='версия: %h %s'
 
 say "5. Настраиваю nginx"
