@@ -293,3 +293,8 @@ open(f'{ROOT}/llms.txt', 'w', encoding='utf-8').write(ll)
 
 exec(open(f"{SCR}/page404.py", encoding="utf-8").read())
 exec(open(f"{SCR}/admin.py", encoding="utf-8").read())
+
+# Светлая тема и переключатель — на все страницы, включая только что собранные
+import importlib.util as _u
+_spec = _u.spec_from_file_location('apply_theme', os.path.join(ROOT, '_tools', 'theme', 'apply_theme.py'))
+_m = _u.module_from_spec(_spec); _spec.loader.exec_module(_m); _m.main()

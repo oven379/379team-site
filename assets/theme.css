@@ -1,0 +1,67 @@
+/* Светлая тема itcompania.ru. Включается переключателем (кнопка солнце/луна), выбор хранится в браузере.
+   По умолчанию — фирменная тёмная тема. Контраст проверен по WCAG: акцент-текст #527a00 на белом — 5.1:1,
+   основной текст — 17:1, приглушённый — 6.3:1. Кнопки остаются фирменного салатового с чёрным текстом. */
+
+html[data-theme="light"] {
+  --bg: #ffffff;
+  --bg2: #f5f6f2;
+  --bg3: #ebede6;
+  --border: #dcdfd5;
+  --accent: #527a00;
+  --text: #1b1d18;
+  --muted: #5d6158;
+  --muted2: #8a8d85;
+  --white: #111311;
+  color-scheme: light;
+}
+html[data-theme="light"] body { background: var(--bg); color: var(--text); }
+
+/* Фирменные салатовые кнопки и метки — без изменений */
+html[data-theme="light"] :is(.btn-primary, .btn-accent, .btn-dark, .nav-cta, .service-btn, .icon-btn.tg, .pricing-badge) {
+  background: #c8ff00; color: #000;
+}
+html[data-theme="light"] a[style*="background:var(--accent)"] { background: #c8ff00 !important; color: #000 !important; }
+html[data-theme="light"] :is(.hero-badge, .process-step)::before { background: #c8ff00; }
+
+/* Тексты, у которых цвет был задан жёстко под тёмный фон */
+html[data-theme="light"] :is(.article p, .article ul, .article ol, .article td, .faq-static dd,
+  .prose p, .prose li, .prose td, .admin td, .admin-help, .flow figcaption) { color: #2c2f28; }
+
+/* Блоки призыва внизу страниц */
+html[data-theme="light"] :is(.cta, .cta-section) { background: var(--bg2); }
+html[data-theme="light"] :is(.cta h2, .cta-section h2) { color: var(--white); }
+html[data-theme="light"] :is(.cta p, .cta-section p, .terms-link) { color: var(--muted); }
+
+/* «Занятый клиент»: полупрозрачная тёмная шапка */
+html[data-theme="light"] header { background: rgba(255, 255, 255, .95); }
+
+/* Главная: выделенные тёмные карточки «Занятый клиент» → светло-салатовые */
+html[data-theme="light"] [style*="#0d0d0d 0%"],
+html[data-theme="light"] .service-card[style*="#141a07"] {
+  background: linear-gradient(135deg, #fbfef2 0%, #eef7d6 100%) !important;
+  border-color: rgba(82, 122, 0, .35) !important;
+}
+html[data-theme="light"] [style*="#0d0d0d 0%"] [style*="color:#fff"] { color: var(--white) !important; }
+html[data-theme="light"] [style*="#0d0d0d 0%"] [style*="color:#888"] { color: var(--muted) !important; }
+
+/* Доводка контраста (проверено автоматически по WCAG) */
+html[data-theme="light"] :is(.step-num, .step-big-num) { color: #b3b8aa; }
+html[data-theme="light"] :is(.blog-link.active, .blog-link:hover) { color: #456700; border-color: #456700; }
+html[data-theme="light"] .split-label.red { color: #c62828; }
+
+/* Переключатель темы */
+.theme-toggle {
+  display: inline-flex; align-items: center; justify-content: center; flex-shrink: 0;
+  width: 40px; height: 40px; padding: 0; border-radius: 50%; cursor: pointer;
+  background: var(--bg3); border: 1px solid var(--border); color: var(--text);
+  transition: border-color .2s, color .2s;
+}
+.theme-toggle:hover { border-color: var(--accent); color: var(--accent); }
+.theme-toggle:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.theme-toggle svg { display: block; }
+.theme-toggle .i-moon { display: none; }
+html[data-theme="light"] .theme-toggle .i-sun { display: none; }
+html[data-theme="light"] .theme-toggle .i-moon { display: block; }
+footer .theme-toggle { width: 36px; height: 36px; }
+/* На узких экранах в шапке нет места — переключатель остаётся в подвале */
+@media (max-width: 480px) { header .theme-toggle { display: none; } }

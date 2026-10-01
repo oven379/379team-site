@@ -375,3 +375,8 @@ lines = ''.join(f'- [Услуга — {P["name"]}]({SITE}/{P["slug"]}/)\n' for P
 ll = ll.replace('- [Блог](https://itcompania.ru/blog/)\n', lines + '- [Блог](https://itcompania.ru/blog/)\n', 1)
 open(f'{ROOT}/llms.txt', 'w', encoding='utf-8').write(ll)
 print('страницы:', ', '.join(slugs))
+
+# Светлая тема и переключатель — на все страницы, включая только что собранные
+import importlib.util as _u
+_spec = _u.spec_from_file_location('apply_theme', os.path.join(ROOT, '_tools', 'theme', 'apply_theme.py'))
+_m = _u.module_from_spec(_spec); _spec.loader.exec_module(_m); _m.main()
