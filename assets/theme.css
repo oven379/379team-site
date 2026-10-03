@@ -72,3 +72,23 @@ footer { flex-wrap: wrap; gap: 12px; }
   header .nav-pill { display: none; }
   .footer-nav { order: 3; width: 100%; justify-content: center; padding-top: 4px; }
 }
+
+/* Закреплённый подвал: меню и контакты всегда внизу экрана */
+body > footer {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: 90;
+  display: flex; align-items: center; justify-content: space-between; flex-wrap: nowrap; gap: 16px;
+  padding: 10px 24px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(24, 24, 24, .94); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--border);
+}
+html[data-theme="light"] body > footer { background: rgba(255, 255, 255, .94); }
+body { padding-bottom: calc(64px + env(safe-area-inset-bottom)); }
+body > footer .footer-nav { flex: 1; justify-content: center; }
+@media (max-width: 560px) {
+  body > footer { padding: 8px 12px calc(8px + env(safe-area-inset-bottom)); gap: 10px; }
+  body > footer :is(.footer-logo, .footer-brand) { display: none; }
+  body > footer .footer-nav { order: 0; width: auto; padding-top: 0; justify-content: flex-start; gap: 4px 16px; font-size: 14px; }
+  body > footer .footer-nav a[href="/usloviya-raboty/"] { display: none; }
+  body > footer .footer-nav a { color: var(--text); font-weight: 600; }
+  body { padding-bottom: calc(58px + env(safe-area-inset-bottom)); }
+}

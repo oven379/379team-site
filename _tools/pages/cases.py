@@ -14,7 +14,8 @@ APPS = [
     dict(
         name='ДелайДело', kind='Мобильное приложение',
         text='Планировщик задач на день: напоминания, перенос дел на завтра, календарь планов, тёмная и светлая тема. Без рекламы и регистрации.',
-        appstore='https://apps.apple.com/ru/app/%D0%B4%D0%B5%D0%BB%D0%B0%D0%B9%D0%B4%D0%B5%D0%BB%D0%BE/id6759549338',
+        appstore='https://apps.apple.com/us/app/%D0%B4%D0%B5%D0%BB%D0%B0%D0%B9%D0%B4%D0%B5%D0%BB%D0%BE/id6759549338?l=ru',
+        site='https://delodelai.ru',
         tags=['mobile'], confirmed=True,
     ),
     dict(
