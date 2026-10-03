@@ -18,10 +18,10 @@ html[data-theme="light"] body { background: var(--bg); color: var(--text); }
 
 /* Фирменные салатовые кнопки и метки — без изменений */
 html[data-theme="light"] :is(.btn-primary, .btn-accent, .btn-dark, .nav-cta, .service-btn, .icon-btn.tg, .pricing-badge) {
-  background: #c8ff00; color: #000;
+  background: #b5e05a; color: #000;
 }
-html[data-theme="light"] :is(a[aria-label="Написать в Telegram"], a[style*="background:var(--accent)"], a[style*="background: var(--accent)"]) { background: #c8ff00 !important; color: #000 !important; }
-html[data-theme="light"] :is(.hero-badge, .process-step)::before { background: #c8ff00; }
+html[data-theme="light"] :is(a[aria-label="Написать в Telegram"], a[style*="background:var(--accent)"], a[style*="background: var(--accent)"]) { background: #b5e05a !important; color: #000 !important; }
+html[data-theme="light"] :is(.hero-badge, .process-step)::before { background: #b5e05a; }
 
 /* Тексты, у которых цвет был задан жёстко под тёмный фон */
 html[data-theme="light"] :is(.article p, .article ul, .article ol, .article td, .faq-static dd,

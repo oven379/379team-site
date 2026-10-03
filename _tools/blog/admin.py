@@ -59,7 +59,7 @@ def build_admin():
   .admin td{{padding:12px 14px;border-top:1px solid var(--border);color:#d6d6d6;vertical-align:top}}
   .admin a{{color:var(--text)}}
   .admin tr.live .st{{color:var(--accent)}}
-  .admin tr.next{{background:rgba(200,255,0,.06)}}
+  .admin tr.next{{background:rgba(181,224,90,.06)}}
   .admin-help{{margin:12px 0 16px 22px;color:#d6d6d6;line-height:1.8}}
   .admin-help a{{color:var(--accent)}}
   .admin-help code{{background:var(--bg3);border-radius:4px;padding:1px 6px}}

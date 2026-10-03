@@ -8,7 +8,7 @@ import glob, os, re
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
-THEME_VER = '4'  # увеличивайте при правке assets/theme.css или theme.js
+THEME_VER = '5'  # увеличивайте при правке assets/theme.css или theme.js
 HEAD = ('<script>try{if(localStorage.getItem(\'itc-theme\')===\'light\')'
         'document.documentElement.setAttribute(\'data-theme\',\'light\')}catch(e){}</script>\n'
         f'  <link rel="stylesheet" href="/assets/theme.css?v={THEME_VER}"/>\n'
