@@ -57,3 +57,18 @@ html[data-theme="light"] .theme-toggle .i-moon { display: block; }
 footer .theme-toggle { width: 36px; height: 36px; }
 /* На узких экранах в шапке нет места — переключатель остаётся в подвале */
 @media (max-width: 480px) { header .theme-toggle { display: none; } }
+
+/* Навигация: кнопка «Работы» в шапке и ссылки в подвале */
+.nav-pill { display: flex; align-items: center; height: 40px; padding: 0 18px; border-radius: 20px; background: var(--bg3);
+  border: 1px solid var(--border); color: var(--text); text-decoration: none; font-size: 14px; font-weight: 600;
+  transition: border-color .2s, color .2s; flex-shrink: 0; }
+.nav-pill:hover, .nav-pill.active { border-color: var(--accent); color: var(--accent); }
+html[data-theme="light"] :is(.nav-pill.active, .nav-pill:hover) { color: #456700; border-color: #456700; }
+footer { flex-wrap: wrap; gap: 12px; }
+.footer-nav { display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 14px; }
+.footer-nav a { color: var(--muted); text-decoration: none; }
+.footer-nav a:hover { color: var(--accent); }
+@media (max-width: 560px) {
+  header .nav-pill { display: none; }
+  .footer-nav { order: 3; width: 100%; justify-content: center; padding-top: 4px; }
+}

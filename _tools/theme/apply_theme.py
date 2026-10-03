@@ -8,10 +8,11 @@ import glob, os, re
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
+THEME_VER = '3'  # увеличивайте при правке assets/theme.css или theme.js
 HEAD = ('<script>try{if(localStorage.getItem(\'itc-theme\')===\'light\')'
         'document.documentElement.setAttribute(\'data-theme\',\'light\')}catch(e){}</script>\n'
-        '  <link rel="stylesheet" href="/assets/theme.css"/>\n'
-        '  <script src="/assets/theme.js" defer></script>\n')
+        f'  <link rel="stylesheet" href="/assets/theme.css?v={THEME_VER}"/>\n'
+        f'  <script src="/assets/theme.js?v={THEME_VER}" defer></script>\n')
 
 SUN = ('<svg class="i-sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" '
        'stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4.5"/><path d="M12 2v2.5M12 19.5V22M4.2 4.2l1.8 1.8'
@@ -22,6 +23,9 @@ BUTTON = f'<button class="theme-toggle" type="button" aria-label="Включит
 
 
 def patch(s):
+    s = re.sub(r'/assets/theme\.(css|js)(\?v=\w+)?"', lambda m: f'/assets/theme.{m.group(1)}?v={THEME_VER}"', s)
+    s = s.replace('<nav class="footer-nav" aria-label="Разделы сайта">', '<div class="footer-nav" role="navigation" aria-label="Разделы сайта">')
+    s = re.sub(r'(<div class="footer-nav"[^>]*>.*?)</nav>', r'\1</div>', s, count=1, flags=re.S)
     if '/assets/theme.css' not in s:
         s = s.replace('</head>', '  ' + HEAD + '</head>', 1)
     # шапка: после ссылки «Блог»
@@ -34,6 +38,21 @@ def patch(s):
     if f and 'theme-toggle' not in f.group(0):
         new_f = re.sub(r'(<div style="display:flex[^"]*">)', r'\1\n    ' + BUTTON.replace('\\', '\\\\'), f.group(0), count=1)
         s = s[:f.start()] + new_f + s[f.end():]
+    # шапка: кнопка «Работы» перед «Блогом»
+    h = re.search(r'<header[^>]*>.*?</header>', s, re.S)
+    if h and 'href="/portfolio/" class="nav-pill' not in h.group(0):
+        new_h = re.sub(r'(<a href="/blog/")', '<a href="/portfolio/" class="nav-pill">Работы</a>\n    \\1', h.group(0), count=1)
+        s = s[:h.start()] + new_h + s[h.end():]
+    # подвал: навигация после логотипа
+    f = re.search(r'<footer[^>]*>.*?</footer>', s, re.S)
+    if f and 'footer-nav' not in f.group(0):
+        nav = ('\n  <div class="footer-nav" role="navigation" aria-label="Разделы сайта"><a href="/portfolio/">Работы</a>'
+               '<a href="/blog/">Блог</a><a href="/usloviya-raboty/">Условия работы</a></div>')
+        new_f = re.sub(r'(</a>|</span>)(\s*<div style="display:flex)', lambda m: m.group(1) + nav + m.group(2), f.group(0), count=1)
+        s = s[:f.start()] + new_f + s[f.end():]
+    # на странице портфолио кнопка «Работы» подсвечена
+    if '<link rel="canonical" href="https://itcompania.ru/portfolio/"/>' in s:
+        s = s.replace('<a href="/portfolio/" class="nav-pill">', '<a href="/portfolio/" class="nav-pill active" aria-current="page">', 1)
     return s
 
 
