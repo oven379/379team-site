@@ -34,7 +34,6 @@ APPS = [
 
 # Сайты: только те, что открываются (проверено 29.09.2026). tilda=False — сделан не на Tilda.
 SITES = [
-    dict(name='Альфа-Трейдинг', niche='Федерация бодибилдинга', url='https://alphapride.ru', tilda=True),
     dict(name='Magertrade', niche='Насосы и насосное оборудование, каталог', url='https://magertrade.ru', tilda=True),
     dict(name='MetaRacing', niche='Клубы гоночных симуляторов, Москва и Санкт-Петербург', url='https://metaracing.ru', tilda=False),
     dict(name='Батист', niche='Премиальный салон штор', url='https://batist-dn.ru', tilda=False),
@@ -51,4 +50,14 @@ SITES = [
     dict(name='Мастер-Замки', niche='Срочное вскрытие замков 24/7', url='https://master-zamkidn.ru', tilda=True),
     dict(name='Виктория Гизатуллина', niche='Сайт-портфолио художника', url='https://gizatullinaart.ru', tilda=True),
     dict(name='Нефтегазовое оборудование', niche='Проект на Behance', url='https://www.behance.net/gallery/232205811/neftegazovoe-oborudovanie', tilda=True, behance=True),
+]
+
+# Кейсы с подробным разбором (показываются первыми в портфолио и на страницах услуг по tags)
+PROJECTS = [
+    dict(
+        name='AlphaPride', kind='Сайт компании + интернет-магазин на Tilda',
+        text='Дистрибьютор спортивного питания GEON: корпоративный сайт и магазин. Доставка Ozon в пункты выдачи прямо в корзине, оплата картой и по счёту для юрлиц, онлайн-касса.',
+        site='https://alphapride.ru/market', case='/blog/keis-alphapride/',
+        tags=['shop'], confirmed=True,
+    ),
 ]

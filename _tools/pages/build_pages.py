@@ -11,7 +11,7 @@ ROOT = os.path.abspath(os.path.join(SCR, '..', '..'))
 sys.path.insert(0, SCR)
 sys.path.insert(0, os.path.join(SCR, '..', 'blog'))
 from pages import PAGES
-from cases import APPS, SITES
+from cases import APPS, SITES, PROJECTS
 from metrika import add as add_metrika
 from posts import POSTS as BLOG_A
 from posts_plan import PLAN_POSTS as BLOG_B
@@ -132,7 +132,7 @@ def crumbs(*items):
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]}
 
 def app_card(a):
-    links = [f'<a class="store-btn" href="{a["appstore"]}" target="_blank" rel="noopener">{APPLE}<span><small>Загрузите в</small>App Store</span></a>']
+    links = [f'<a class="store-btn" href="{a["appstore"]}" target="_blank" rel="noopener">{APPLE}<span><small>Загрузите в</small>App Store</span></a>'] if a.get('appstore') else []
     if a.get('case'):
         links.append(f'<a class="text-link" href="{a["case"]}">Читать кейс →</a>')
     if a.get('site'):
@@ -151,7 +151,7 @@ def site_card(s):
     <a class="site-item" href="{s['url']}" target="_blank" rel="noopener"><b>{s['name']}</b><span>{s['niche']}</span><i>{label} ↗</i></a>'''
 
 def cases_for(tag):
-    apps = [a for a in APPS if a['confirmed'] and tag in a.get('tags', [])]
+    apps = [a for a in PROJECTS + APPS if a['confirmed'] and tag in a.get('tags', [])]
     sites = [s for s in SITES if tag in s.get('tags', []) or (tag == 'custom' and not s['tilda'])]
     if not apps and not sites:
         return ''
@@ -265,7 +265,14 @@ def build_portfolio():
   <p class="hero-sub">Мобильные приложения, CRM и сайты, которые работают прямо сейчас. Приложения можно скачать, сайты — открыть и посмотреть.</p>
 </div>
 
-<section id="apps" style="padding-top:0">
+<section id="projects" style="padding-top:0">
+  <p class="section-label">Кейсы</p>
+  <h2>Проекты с разбором</h2>
+  <div class="cases-grid">{''.join(app_card(a) for a in PROJECTS if a['confirmed'])}
+  </div>
+</section>
+
+<section id="apps">
   <p class="section-label">Мобильные приложения и CRM</p>
   <h2>Приложения в App Store</h2>
   <p class="page-intro">Разрабатываем на React Native — одно приложение для iOS и Android. Подробнее — на странице <a href="/mobile/" style="color:var(--accent)">разработки мобильных приложений</a> и <a href="/razrabotka-crm-sistemy/" style="color:var(--accent)">разработки CRM</a>.</p>
@@ -343,7 +350,7 @@ build_portfolio()
 build_conditions()
 
 # --- блок «Примеры работ» на существующих статичных страницах услуг (обновляется между метками)
-INJECT = {'mobile': 'mobile'}
+INJECT = {'mobile': 'mobile', 'internet-magazin': 'shop'}
 CSS_ONLY = EXTRA.replace('\n  </style>', '')
 for slug, tag in INJECT.items():
     f = f'{ROOT}/{slug}/index.html'

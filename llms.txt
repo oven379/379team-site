@@ -124,6 +124,7 @@ Telegram: https://t.me/manager379team
 - [Портфолио: приложения, CRM и сайты](https://itcompania.ru/portfolio/)
 - [Условия работы: этапы, договор, оплата](https://itcompania.ru/usloviya-raboty/)
 - [Блог](https://itcompania.ru/blog/)
+- [Статья: Кейс AlphaPride: интернет-магазин спортивного питания на Тильде с доставкой Ozon](https://itcompania.ru/blog/keis-alphapride/)
 - [Статья: CRM для детейлинга и СТО КарПас: кейс разработки мобильного приложения](https://itcompania.ru/blog/keis-karpas/)
 - [Статья: Сколько стоит сайт на Тильде в 2026 году: цены на создание, сроки и из чего складывается стоимость](https://itcompania.ru/blog/skolko-stoit-sajt-na-tilda/)
 - [Статья: Лендинг или сайт: что лучше выбрать для бизнеса](https://itcompania.ru/blog/lending-ili-sajt/)
