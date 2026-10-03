@@ -20,7 +20,7 @@ html[data-theme="light"] body { background: var(--bg); color: var(--text); }
 html[data-theme="light"] :is(.btn-primary, .btn-accent, .btn-dark, .nav-cta, .service-btn, .icon-btn.tg, .pricing-badge) {
   background: #c8ff00; color: #000;
 }
-html[data-theme="light"] a[style*="background:var(--accent)"] { background: #c8ff00 !important; color: #000 !important; }
+html[data-theme="light"] :is(a[aria-label="Написать в Telegram"], a[style*="background:var(--accent)"], a[style*="background: var(--accent)"]) { background: #c8ff00 !important; color: #000 !important; }
 html[data-theme="light"] :is(.hero-badge, .process-step)::before { background: #c8ff00; }
 
 /* Тексты, у которых цвет был задан жёстко под тёмный фон */
@@ -35,14 +35,6 @@ html[data-theme="light"] :is(.cta p, .cta-section p, .terms-link) { color: var(-
 /* «Занятый клиент»: полупрозрачная тёмная шапка */
 html[data-theme="light"] header { background: rgba(255, 255, 255, .95); }
 
-/* Главная: выделенные тёмные карточки «Занятый клиент» → светло-салатовые */
-html[data-theme="light"] [style*="#0d0d0d 0%"],
-html[data-theme="light"] .service-card[style*="#141a07"] {
-  background: linear-gradient(135deg, #fbfef2 0%, #eef7d6 100%) !important;
-  border-color: rgba(82, 122, 0, .35) !important;
-}
-html[data-theme="light"] [style*="#0d0d0d 0%"] [style*="color:#fff"] { color: var(--white) !important; }
-html[data-theme="light"] [style*="#0d0d0d 0%"] [style*="color:#888"] { color: var(--muted) !important; }
 
 /* Доводка контраста (проверено автоматически по WCAG) */
 html[data-theme="light"] :is(.step-num, .step-big-num) { color: #b3b8aa; }

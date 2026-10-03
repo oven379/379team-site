@@ -303,6 +303,42 @@
       .section-title{font-size:22px}
       .pricing-card .price{font-size:26px}
     }
+  
+    /* «Занятый клиент»: баннер и выделенная карточка — цвета из переменных, отдельно для каждой темы */
+    .busy-promo-wrap{padding:0 60px;margin-bottom:-1px}
+    .busy-promo{--promo-bg:linear-gradient(135deg,#121a05 0%,#1b2a06 55%,#22360a 100%);--promo-border:rgba(200,255,0,.35);--promo-side:rgba(0,0,0,.28);--promo-chip:rgba(200,255,0,.12);
+      display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;text-decoration:none;color:var(--text);
+      background:var(--promo-bg);border:1px solid var(--promo-border);border-radius:16px;padding:36px 40px;position:relative;overflow:hidden;transition:transform .2s,border-color .2s}
+    .busy-promo::after{content:"";position:absolute;right:-80px;top:-80px;width:320px;height:320px;border-radius:50%;background:radial-gradient(circle,rgba(200,255,0,.16) 0%,transparent 70%);pointer-events:none}
+    .busy-promo:hover{transform:translateY(-2px);border-color:#c8ff00}
+    .busy-promo__badge{display:inline-flex;align-items:center;gap:8px;background:var(--promo-chip);border:1px solid var(--promo-border);border-radius:100px;padding:5px 14px;font-size:11px;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--accent);margin-bottom:16px}
+    .busy-promo__dot{width:6px;height:6px;border-radius:50%;background:var(--accent)}
+    .busy-promo__title{font-family:'Space Grotesk',sans-serif;font-size:clamp(22px,3vw,32px);font-weight:700;line-height:1.15;color:var(--white);margin-bottom:12px}
+    .busy-promo__text{font-size:16px;line-height:1.65;color:var(--text);max-width:620px;margin-bottom:18px}
+    .busy-promo__list{list-style:none;display:flex;flex-wrap:wrap;gap:8px 18px}
+    .busy-promo__list li{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:var(--white)}
+    .busy-promo__list svg{color:var(--accent);flex-shrink:0}
+    .busy-promo__side{position:relative;z-index:1;background:var(--promo-side);border:1px solid var(--promo-border);border-radius:12px;padding:24px 28px;text-align:center;min-width:230px}
+    .busy-promo__price{font-family:'Space Grotesk',sans-serif;font-size:32px;font-weight:700;color:var(--accent);line-height:1.1}
+    .busy-promo__days{font-size:14px;color:var(--muted);margin:6px 0 18px}
+    .busy-promo__btn{display:inline-block;background:#c8ff00;color:#000;padding:13px 26px;border-radius:8px;font-weight:700;font-size:14px}
+    .service-card.featured{position:relative;border:1px solid rgba(200,255,0,.35);background:linear-gradient(160deg,#1a2608 0%,var(--bg2) 70%)}
+    .featured-badge{position:absolute;top:14px;right:14px;background:#c8ff00;color:#000;border-radius:100px;padding:3px 10px;font-size:10px;font-weight:700;letter-spacing:1px;text-transform:uppercase}
+    html[data-theme="light"] .busy-promo{--promo-bg:linear-gradient(135deg,#f6fce6 0%,#ecf7cc 60%,#e2f2b0 100%);--promo-border:rgba(82,122,0,.35);--promo-side:rgba(255,255,255,.75);--promo-chip:rgba(82,122,0,.08)}
+    html[data-theme="light"] .busy-promo::after{background:radial-gradient(circle,rgba(200,255,0,.35) 0%,transparent 70%)}
+    html[data-theme="light"] .busy-promo:hover{border-color:#527a00}
+    html[data-theme="light"] .busy-promo__badge,html[data-theme="light"] .busy-promo__price{color:#3d5c00}
+    html[data-theme="light"] .busy-promo__dot{background:#3d5c00}
+    html[data-theme="light"] .busy-promo__list svg{color:#3d5c00}
+    html[data-theme="light"] .service-card.featured{border-color:rgba(82,122,0,.4);background:linear-gradient(160deg,#eef8d4 0%,#ffffff 70%)}
+    @media(max-width:768px){
+      .busy-promo-wrap{padding:0 16px}
+      .busy-promo{grid-template-columns:1fr;padding:26px 20px;gap:22px}
+      .busy-promo__side{min-width:0;padding:20px}
+      .busy-promo__list{flex-direction:column}
+      .busy-promo__price{font-size:28px;white-space:nowrap}
+      .busy-promo__btn{display:block;white-space:nowrap}
+    }
   </style>
   <!-- Yandex.Metrika counter -->
   <script type="text/javascript">
@@ -359,23 +395,22 @@
 <!-- SERVICES -->
 
 <!-- ЗАНЯТЫЙ КЛИЕНТ — выделенная плашка -->
-<section style="padding:0 60px;margin-bottom:-1px">
-  <a href="/busyclient/" style="text-decoration:none;display:block">
-    <div style="background:linear-gradient(135deg,#0d0d0d 0%,#1a1f0a 100%);border:1px solid rgba(200,255,0,.3);border-radius:12px;padding:36px 48px;display:flex;justify-content:space-between;align-items:center;gap:24px;transition:border-color .2s;position:relative;overflow:hidden;flex-wrap:wrap">
-      <div style="position:absolute;top:0;right:0;width:300px;height:100%;background:radial-gradient(ellipse at right,rgba(200,255,0,.06) 0%,transparent 70%);pointer-events:none"></div>
-      <div>
-        <div style="display:inline-flex;align-items:center;gap:8px;background:rgba(200,255,0,.1);border:1px solid rgba(200,255,0,.25);border-radius:100px;padding:4px 14px;font-size:11px;font-weight:700;color:#c8ff00;letter-spacing:1.5px;text-transform:uppercase;margin-bottom:14px">
-          <span style="width:6px;height:6px;background:#c8ff00;border-radius:50%;display:inline-block"></span>
-          Премиальная услуга
-        </div>
-        <div style="font-family:Space Grotesk,sans-serif;font-size:clamp(22px,3vw,32px);font-weight:700;color:#fff;margin-bottom:8px">Занятый клиент — сайт под ключ без вашего участия</div>
-        <div style="font-size:15px;color:#888;max-width:560px;line-height:1.6">Вы даёте бриф и оплату — мы делаем всё остальное. Тексты, дизайн, вёрстка, SEO, домен, хостинг. Вы получаете готовый шедевр.</div>
-      </div>
-      <div style="flex-shrink:0;text-align:right">
-        <div style="font-family:Space Grotesk,sans-serif;font-size:32px;font-weight:700;color:#c8ff00">от 89 000 ₽</div>
-        <div style="font-size:13px;color:#888;margin-bottom:16px">10–15 рабочих дней</div>
-        <div style="display:inline-block;background:#c8ff00;color:#000;padding:12px 28px;border-radius:6px;font-weight:700;font-size:14px">Узнать подробнее →</div>
-      </div>
+<section class="busy-promo-wrap">
+  <a href="/busyclient/" class="busy-promo" aria-label="Занятый клиент — сайт под ключ без вашего участия, от 89 000 ₽">
+    <div class="busy-promo__main">
+      <span class="busy-promo__badge"><span class="busy-promo__dot" aria-hidden="true"></span>Премиальная услуга</span>
+      <h3 class="busy-promo__title">Занятый клиент — сайт под ключ без вашего участия</h3>
+      <p class="busy-promo__text">Вы даёте бриф и оплату — мы делаем всё остальное: тексты, дизайн, вёрстку, SEO, домен и хостинг. Вы получаете готовый сайт, пока занимаетесь бизнесом.</p>
+      <ul class="busy-promo__list">
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Бриф за 15 минут</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Тексты и дизайн пишем сами</li>
+        <li><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6 9 17l-5-5"/></svg>Домен, хостинг и SEO включены</li>
+      </ul>
+    </div>
+    <div class="busy-promo__side">
+      <div class="busy-promo__price">от 89 000 ₽</div>
+      <div class="busy-promo__days">10–15 рабочих дней</div>
+      <span class="busy-promo__btn">Узнать подробнее →</span>
     </div>
   </a>
 </section>
@@ -506,8 +541,8 @@
       </div>
     </article>
 
-    <article class="service-card" itemscope itemtype="https://schema.org/Service" style="border:1px solid rgba(200,255,0,.25);background:linear-gradient(135deg,#111 0%,#141a07 100%);position:relative;overflow:hidden;flex-wrap:wrap">
-      <div style="position:absolute;top:12px;right:12px;background:rgba(200,255,0,.12);border:1px solid rgba(200,255,0,.3);border-radius:100px;padding:3px 10px;font-size:10px;font-weight:700;color:var(--accent);letter-spacing:1px;text-transform:uppercase">Хит</div>
+    <article class="service-card featured" itemscope itemtype="https://schema.org/Service">
+      <div class="featured-badge">Хит</div>
       <div class="service-icon" aria-hidden="true">⭐</div>
       <h3 itemprop="name">Занятый клиент — сайт без вашего участия</h3>
       <p itemprop="description">Вы даёте бриф и оплату — мы делаем всё остальное. Тексты, дизайн, вёрстка, SEO, домен, хостинг. Вы получаете готовый сайт пока занимаетесь бизнесом.</p>
