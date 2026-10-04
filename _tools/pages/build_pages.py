@@ -370,7 +370,7 @@ slugs = [P['slug'] for P in PAGES] + ['portfolio', 'usloviya-raboty']
 sm = open(f'{ROOT}/sitemap.xml', encoding='utf-8').read()
 for s in slugs + ['sajt-onlajn-kursa']:  # старый адрес страницы онлайн-школы
     sm = re.sub(rf'  <url><loc>{SITE}/{s}/</loc>.*?</url>\n', '', sm)
-PAGES_UPDATED = '2026-09-29'  # меняйте при правке текстов страниц услуг
+PAGES_UPDATED = '2026-10-04'  # меняйте при правке текстов страниц услуг
 rows = [f'  <url><loc>{SITE}/{s}/</loc><lastmod>{PAGES_UPDATED}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>' for s in slugs]
 anchor = f'  <url><loc>{SITE}/blog/</loc>'
 sm = sm.replace(anchor, '\n'.join(rows) + '\n' + anchor, 1) if anchor in sm else sm.replace('</urlset>', '\n'.join(rows) + '\n</urlset>')
