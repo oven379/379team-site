@@ -1,0 +1,360 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<yml_catalog date="2026-10-04 10:40">
+  <shop>
+    <name>It Компания</name>
+    <company>It Компания</company>
+    <url>https://itcompania.ru/</url>
+    <currencies>
+      <currency id="RUR" rate="1"/>
+    </currencies>
+    <categories>
+      <category id="1">Исполнитель</category>
+      <category id="18" parentId="1">Компьютеры и IT</category>
+      <category id="19" parentId="1">Дизайнеры</category>
+    </categories>
+    <sets>
+      <set id="s1">
+        <name>Разработка сайтов, приложений и CRM — It Компания</name>
+        <url>https://itcompania.ru/</url>
+      </set>
+    </sets>
+    <offers>
+      <offer id="lending">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/lending/</url>
+        <price from="true">69000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/lending.png</picture>
+        <description>Лендинг на Tilda под ключ. Одностраничный сайт на Tilda: структура, тексты, дизайн, формы заявок, подключение аналитики.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="mnogostrannichny-sajt">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/mnogostrannichny-sajt/</url>
+        <price from="true">99000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/mnogostrannichny-sajt.png</picture>
+        <description>Многостраничный сайт на Tilda. Сайт компании на Tilda: страницы услуг, портфолио, блог, формы заявок, базовая SEO-настройка.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="internet-magazin">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/internet-magazin/</url>
+        <price from="true">119000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/internet-magazin.png</picture>
+        <description>Интернет-магазин на Tilda. Магазин на Tilda: каталог, корзина, онлайн-оплата, доставка, онлайн-касса.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="sajt-dlya-onlajn-shkoly">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/sajt-dlya-onlajn-shkoly/</url>
+        <price from="true">79000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/sajt-dlya-onlajn-shkoly.png</picture>
+        <description>Сайт для онлайн-школы. Сайт курса или эксперта: программа, форма записи, приём оплаты, связка с платформой обучения.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="detailing">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/detailing/</url>
+        <price from="true">39000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/detailing.png</picture>
+        <description>Сайт для детейлинга и автосервиса. Готовый сайт для детейлинг-студии или автосервиса: услуги, цены, онлайн-запись, заявки в мессенджер.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="crm">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/crm/</url>
+        <price from="true">29000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/crm.png</picture>
+        <description>Интеграция сайта с CRM. Подключение сайта к amoCRM или Битрикс24: заявки, воронка, уведомления, сквозная передача данных.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="busyclient">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/busyclient/</url>
+        <price from="true">89000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/busyclient.png</picture>
+        <description>Сайт под ключ «Занятый клиент». Сайт без участия заказчика: сами собираем материалы, пишем тексты, делаем дизайн и запускаем.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="socseti">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/socseti/</url>
+        <price from="true">19000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>19</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/socseti.png</picture>
+        <description>Оформление социальных сетей. Оформление сообщества или канала: обложки, аватар, шаблоны постов в едином стиле.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="branding">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/branding/</url>
+        <price from="true">49000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>19</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/branding.png</picture>
+        <description>Фирменный стиль и логотип. Логотип, цвета, шрифты и правила их использования: фирменный стиль для сайта и рекламы.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="seo">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/seo/</url>
+        <price from="true">25000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>в месяц</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/seo.png</picture>
+        <description>SEO-продвижение сайта на Tilda. Продвижение сайта в Яндексе и Google: семантика, тексты, техническая настройка.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="razrabotka-veb-prilozhenij">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/razrabotka-veb-prilozhenij/</url>
+        <price from="true">250000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за спринт</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/razrabotka-veb-prilozhenij.png</picture>
+        <description>Разработка веб-приложений. Веб-сервисы, личные кабинеты и порталы на заказ: проектирование, разработка, тесты, запуск.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="devops">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/devops/</url>
+        <price from="true">60000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>в месяц</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/devops.png</picture>
+        <description>DevOps и поддержка серверов. Настройка серверов, автоматическая выкладка, мониторинг и резервные копии для вашего продукта.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="razrabotka-crm-sistemy">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/razrabotka-crm-sistemy/</url>
+        <price from="true">250000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за спринт</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/razrabotka-crm-sistemy.png</picture>
+        <description>Разработка CRM-системы. CRM под процессы компании: заявки, клиенты, склад, отчёты, роли сотрудников, интеграции.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="telegram-boty">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/telegram-boty/</url>
+        <price from="true">50000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/telegram-boty.png</picture>
+        <description>Разработка Telegram-ботов и Mini Apps. Чат-боты и мини-приложения Telegram: запись, заказы, оплата, уведомления, связка с CRM.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="razrabotka-sajta-na-zakaz">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/razrabotka-sajta-na-zakaz/</url>
+        <price from="true">250000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за спринт</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/razrabotka-sajta-na-zakaz.png</picture>
+        <description>Разработка сайта на заказ. Сайт на собственном коде, когда конструктора мало: сложная логика, интеграции, нестандартные задачи.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+      <offer id="mobile">
+        <name>It Компания</name>
+        <url>https://itcompania.ru/mobile/</url>
+        <price from="true">180000</price>
+        <currencyId>RUR</currencyId>
+        <sales_notes>за проект</sales_notes>
+        <categoryId>18</categoryId>
+        <set-ids>s1</set-ids>
+        <picture>https://itcompania.ru/feed/mobile.png</picture>
+        <description>Разработка мобильных приложений. Приложения для iOS и Android: проектирование, дизайн, разработка, публикация в магазинах.</description>
+        <param name="Рейтинг">0</param>
+        <param name="Число отзывов">0</param>
+        <param name="Годы опыта">4</param>
+        <param name="Регион">Россия</param>
+        <param name="Конверсия">1</param>
+        <param name="Организация">true</param>
+        <param name="Выполняется удаленно">true</param>
+        <param name="Ссылка на чат">https://t.me/manager379team</param>
+        <param name="Ссылка на телефон">tel:+79850249319</param>
+        <param name="Об исполнителе">Студия разработки: сайты и интернет-магазины на Tilda, веб- и мобильные приложения, CRM, Telegram-боты. Работаем по договору, все доступы оформляем на клиента.</param>
+      </offer>
+    </offers>
+  </shop>
+</yml_catalog>
