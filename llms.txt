@@ -117,6 +117,8 @@ Telegram: https://t.me/manager379team
 - [Все услуги (включая онлайн-курсы, Digital-продукт, DevOps)](https://itcompania.ru/#services)
 - [Услуга — Сайт для онлайн-школы](https://itcompania.ru/sajt-dlya-onlajn-shkoly/)
 - [Услуга — Сайт для селлеров маркетплейсов](https://itcompania.ru/sajt-dlya-sellerov/)
+- [Услуга — Сайт для ресторана и кафе](https://itcompania.ru/sajt-dlya-restorana/)
+- [Услуга — Сайт для производства и стройматериалов](https://itcompania.ru/sajt-dlya-proizvodstva/)
 - [Услуга — Разработка веб-приложений](https://itcompania.ru/razrabotka-veb-prilozhenij/)
 - [Услуга — Разработка CRM-системы](https://itcompania.ru/razrabotka-crm-sistemy/)
 - [Услуга — DevOps и инфраструктура](https://itcompania.ru/devops/)

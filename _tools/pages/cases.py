@@ -35,16 +35,16 @@ APPS = [
 
 # Сайты: только те, что открываются (проверено 29.09.2026). tilda=False — сделан не на Tilda.
 SITES = [
-    dict(name='Magertrade', niche='Насосы и насосное оборудование, каталог', url='https://magertrade.ru', tilda=True),
+    dict(name='Magertrade', niche='Насосы и насосное оборудование, каталог', url='https://magertrade.ru', tilda=True, tags=['factory']),
     dict(name='MetaRacing', niche='Клубы гоночных симуляторов, Москва и Санкт-Петербург', url='https://metaracing.ru', tilda=False),
     dict(name='Батист', niche='Премиальный салон штор', url='https://batist-dn.ru', tilda=False),
-    dict(name='Terricon City', niche='Тротуарная плитка и бордюры', url='https://terriconcity.ru', tilda=True),
-    dict(name='Базис Строй', niche='Тротуарная плитка, бордюры, шлакоблок', url='https://bazisstroydn.ru', tilda=True),
+    dict(name='Terricon City', niche='Тротуарная плитка и бордюры', url='https://terriconcity.ru', tilda=True, tags=['factory']),
+    dict(name='Базис Строй', niche='Тротуарная плитка, бордюры, шлакоблок', url='https://bazisstroydn.ru', tilda=True, tags=['factory']),
     dict(name='Полезно', niche='Программы сопровождения по питанию', url='https://poleznolife.ru', tilda=True, tags=['course']),
     dict(name='Neprostoidea', niche='Системы управления процессами и проектами', url='https://neprostoidea.com', tilda=True),
     dict(name='ТИК', niche='Системы безопасности для квартир и бизнеса', url='https://tikdn.ru', tilda=True),
-    dict(name='Товарищ Сухов', niche='Ресторан восточной кухни', url='https://suhowdn.ru', tilda=True),
-    dict(name='Cafe City', niche='Кафе и доставка еды', url='https://cafe-city-sh.ru', tilda=True),
+    dict(name='Товарищ Сухов', niche='Ресторан восточной кухни', url='https://suhowdn.ru', tilda=True, tags=['restaurant']),
+    dict(name='Cafe City', niche='Кафе и доставка еды', url='https://cafe-city-sh.ru', tilda=True, tags=['restaurant']),
     dict(name='A-Lion', niche='Автосервис Peugeot, Renault, Citroen', url='https://a-lion.ru', tilda=True),
     dict(name='Mobysound', niche='Аренда звукового и светового оборудования', url='https://mobysound.ru', tilda=True),
     dict(name='Venditore', niche='Кофе и кофейное оборудование', url='https://venditoredn.ru', tilda=True),
