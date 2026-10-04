@@ -6,7 +6,7 @@
     python3 _tools/feed/build_feed.py --covers   # ещё и перерисовать обложки /feed/*.png (нужен Pillow)
 
 Цены и названия — те же, что в карточках услуг на главной. Меняете цену на сайте — поменяйте и здесь.
-Рейтинг и число отзывов в фид пишем только настоящие: пока отзывов нет, там нули.
+Рейтинг, число отзывов и годы опыта задаются константами ниже — пишем только настоящие значения.
 """
 import datetime, os, sys
 from xml.sax.saxutils import escape
@@ -14,7 +14,9 @@ from xml.sax.saxutils import escape
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 SITE = 'https://itcompania.ru'
 NAME = 'It Компания'
-FOUNDED = 2022
+EXPERIENCE_SINCE = 2019  # опыт команды, со слов владельца: 7 лет на 2026 год
+RATING = '4.9'           # со слов владельца
+REVIEWS = 0
 TELEGRAM = 'https://t.me/manager379team'
 PHONE = 'tel:+79850249319'
 REGION = 'Россия'
@@ -68,7 +70,7 @@ def tag(name, value, attrs=''):
 
 def build_feed():
     now = datetime.datetime.now()
-    years = max(now.year - FOUNDED, 1)
+    years = max(now.year - EXPERIENCE_SINCE, 1)
     out = ['<?xml version="1.0" encoding="UTF-8"?>',
            f'<yml_catalog date="{now.strftime("%Y-%m-%d %H:%M")}">', '  <shop>',
            '    ' + tag('name', NAME), '    ' + tag('company', NAME), '    ' + tag('url', SITE + '/'),
@@ -84,7 +86,7 @@ def build_feed():
         url = f'{SITE}/{slug}/'
         assert os.path.exists(f'{ROOT}/{slug}/index.html'), f'нет страницы /{slug}/'
         assert os.path.exists(f'{ROOT}/feed/{slug}.png'), f'нет обложки /feed/{slug}.png — запустите с --covers'
-        params = [('Рейтинг', 0), ('Число отзывов', 0), ('Годы опыта', years), ('Регион', REGION), ('Конверсия', 1),
+        params = [('Рейтинг', RATING), ('Число отзывов', REVIEWS), ('Годы опыта', years), ('Регион', REGION), ('Конверсия', 1),
                   ('Организация', 'true'), ('Выполняется удаленно', 'true'),
                   ('Ссылка на чат', TELEGRAM), ('Ссылка на телефон', PHONE), ('Об исполнителе', ABOUT)]
         out += [f'      <offer id="{slug}">',

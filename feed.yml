@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-10-04 10:40">
+<yml_catalog date="2026-10-04 10:42">
   <shop>
     <name>It Компания</name>
     <company>It Компания</company>
@@ -29,9 +29,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/lending.png</picture>
         <description>Лендинг на Tilda под ключ. Одностраничный сайт на Tilda: структура, тексты, дизайн, формы заявок, подключение аналитики.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -50,9 +50,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/mnogostrannichny-sajt.png</picture>
         <description>Многостраничный сайт на Tilda. Сайт компании на Tilda: страницы услуг, портфолио, блог, формы заявок, базовая SEO-настройка.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -71,9 +71,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/internet-magazin.png</picture>
         <description>Интернет-магазин на Tilda. Магазин на Tilda: каталог, корзина, онлайн-оплата, доставка, онлайн-касса.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -92,9 +92,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/sajt-dlya-onlajn-shkoly.png</picture>
         <description>Сайт для онлайн-школы. Сайт курса или эксперта: программа, форма записи, приём оплаты, связка с платформой обучения.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -113,9 +113,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/detailing.png</picture>
         <description>Сайт для детейлинга и автосервиса. Готовый сайт для детейлинг-студии или автосервиса: услуги, цены, онлайн-запись, заявки в мессенджер.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -134,9 +134,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/crm.png</picture>
         <description>Интеграция сайта с CRM. Подключение сайта к amoCRM или Битрикс24: заявки, воронка, уведомления, сквозная передача данных.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -155,9 +155,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/busyclient.png</picture>
         <description>Сайт под ключ «Занятый клиент». Сайт без участия заказчика: сами собираем материалы, пишем тексты, делаем дизайн и запускаем.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -176,9 +176,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/socseti.png</picture>
         <description>Оформление социальных сетей. Оформление сообщества или канала: обложки, аватар, шаблоны постов в едином стиле.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -197,9 +197,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/branding.png</picture>
         <description>Фирменный стиль и логотип. Логотип, цвета, шрифты и правила их использования: фирменный стиль для сайта и рекламы.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -218,9 +218,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/seo.png</picture>
         <description>SEO-продвижение сайта на Tilda. Продвижение сайта в Яндексе и Google: семантика, тексты, техническая настройка.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -239,9 +239,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/razrabotka-veb-prilozhenij.png</picture>
         <description>Разработка веб-приложений. Веб-сервисы, личные кабинеты и порталы на заказ: проектирование, разработка, тесты, запуск.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -260,9 +260,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/devops.png</picture>
         <description>DevOps и поддержка серверов. Настройка серверов, автоматическая выкладка, мониторинг и резервные копии для вашего продукта.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -281,9 +281,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/razrabotka-crm-sistemy.png</picture>
         <description>Разработка CRM-системы. CRM под процессы компании: заявки, клиенты, склад, отчёты, роли сотрудников, интеграции.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -302,9 +302,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/telegram-boty.png</picture>
         <description>Разработка Telegram-ботов и Mini Apps. Чат-боты и мини-приложения Telegram: запись, заказы, оплата, уведомления, связка с CRM.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -323,9 +323,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/razrabotka-sajta-na-zakaz.png</picture>
         <description>Разработка сайта на заказ. Сайт на собственном коде, когда конструктора мало: сложная логика, интеграции, нестандартные задачи.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
@@ -344,9 +344,9 @@
         <set-ids>s1</set-ids>
         <picture>https://itcompania.ru/feed/mobile.png</picture>
         <description>Разработка мобильных приложений. Приложения для iOS и Android: проектирование, дизайн, разработка, публикация в магазинах.</description>
-        <param name="Рейтинг">0</param>
+        <param name="Рейтинг">4.9</param>
         <param name="Число отзывов">0</param>
-        <param name="Годы опыта">4</param>
+        <param name="Годы опыта">7</param>
         <param name="Регион">Россия</param>
         <param name="Конверсия">1</param>
         <param name="Организация">true</param>
