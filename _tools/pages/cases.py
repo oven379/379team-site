@@ -49,6 +49,8 @@ SITES = [
     dict(name='Mobysound', niche='Аренда звукового и светового оборудования', url='https://mobysound.ru', tilda=True),
     dict(name='Venditore', niche='Кофе и кофейное оборудование', url='https://venditoredn.ru', tilda=True),
     dict(name='Мастер-Замки', niche='Срочное вскрытие замков 24/7', url='https://master-zamkidn.ru', tilda=True),
+    dict(name='Донецкзамок', niche='Вскрытие замков в Донецке', url='https://doneckzamok.ru', tilda=True),
+    dict(name='Донбассзамок', niche='Вскрытие и замена замков по ДНР', url='https://donbasszamok.ru', tilda=True),
     dict(name='Виктория Гизатуллина', niche='Сайт-портфолио художника', url='https://gizatullinaart.ru', tilda=True),
     dict(name='Нефтегазовое оборудование', niche='Проект на Behance', url='https://www.behance.net/gallery/232205811/neftegazovoe-oborudovanie', tilda=True, behance=True),
 ]
@@ -60,5 +62,11 @@ PROJECTS = [
         text='Дистрибьютор спортивного питания GEON: корпоративный сайт и магазин. Доставка Ozon в пункты выдачи прямо в корзине, оплата картой и по счёту для юрлиц, онлайн-касса.',
         site='https://alphapride.ru/market', case='/blog/keis-alphapride/',
         tags=['shop'], confirmed=True,
+    ),
+    dict(
+        name='Службы вскрытия замков', kind='Три одностраничных сайта на Tilda + реклама',
+        text='Сайты срочной услуги для Донецка и ДНР: город, цена и время приезда на первом экране, звонок в одно нажатие. Настроили Яндекс Директ и РСЯ, ведём SEO.',
+        site='https://master-zamkidn.ru', case='/blog/keis-vskrytie-zamkov/',
+        tags=[], confirmed=True,
     ),
 ]
