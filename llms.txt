@@ -128,7 +128,7 @@ Telegram: https://t.me/manager379team
 - [Условия работы: этапы, договор, оплата](https://itcompania.ru/usloviya-raboty/)
 - [Блог](https://itcompania.ru/blog/)
 - [Статья: Онлайн-касса для интернет-магазина: нужна ли, как выбрать и подключить к Тильде](https://itcompania.ru/blog/onlajn-kassa-dlya-internet-magazina/)
-- [Статья: Сайт для службы вскрытия замков: три проекта на Тильде и что важно срочной услуге](https://itcompania.ru/blog/keis-vskrytie-zamkov/)
+- [Статья: Сайт для службы вскрытия замков: три кейса на Тильде и что важно срочной услуге](https://itcompania.ru/blog/keis-vskrytie-zamkov/)
 - [Статья: Маркировка БАДов в «Честном знаке»: сроки, требования и продажа через интернет-магазин](https://itcompania.ru/blog/chestnyj-znak-bady/)
 - [Статья: Кейс AlphaPride: интернет-магазин спортивного питания на Тильде с доставкой Ozon](https://itcompania.ru/blog/keis-alphapride/)
 - [Статья: CRM для детейлинга и СТО КарПас: кейс разработки мобильного приложения](https://itcompania.ru/blog/keis-karpas/)
