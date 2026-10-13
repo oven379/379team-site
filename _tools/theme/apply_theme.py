@@ -8,9 +8,12 @@ import glob, os, re
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
-THEME_VER = '5'  # увеличивайте при правке assets/theme.css или theme.js
-HEAD = ('<script>try{if(localStorage.getItem(\'itc-theme\')===\'light\')'
-        'document.documentElement.setAttribute(\'data-theme\',\'light\')}catch(e){}</script>\n'
+THEME_VER = '6'  # увеличивайте при правке assets/theme.css или theme.js
+INLINE = ('<script>try{if(localStorage.getItem(\'itc-theme\')===\'light\')'
+          'document.documentElement.setAttribute(\'data-theme\',\'light\');'
+          'if(localStorage.getItem(\'itc-cookies\')===\'no\')window[\'disableYaCounter113101565\']=true'
+          '}catch(e){}</script>')
+HEAD = (INLINE + '\n'
         f'  <link rel="stylesheet" href="/assets/theme.css?v={THEME_VER}"/>\n'
         f'  <script src="/assets/theme.js?v={THEME_VER}" defer></script>\n')
 
@@ -26,6 +29,8 @@ def patch(s):
     s = re.sub(r'/assets/theme\.(css|js)(\?v=\w+)?"', lambda m: f'/assets/theme.{m.group(1)}?v={THEME_VER}"', s)
     s = s.replace('<nav class="footer-nav" aria-label="Разделы сайта">', '<div class="footer-nav" role="navigation" aria-label="Разделы сайта">')
     s = re.sub(r'(<div class="footer-nav"[^>]*>.*?)</nav>', r'\1</div>', s, count=1, flags=re.S)
+    # маленький скрипт в <head> обновляем до текущего вида
+    s = re.sub(r"<script>try\{if\(localStorage\.getItem\('itc-theme'\).*?</script>", lambda m: INLINE, s, count=1, flags=re.S)
     if '/assets/theme.css' not in s:
         s = s.replace('</head>', '  ' + HEAD + '</head>', 1)
     # шапка: после ссылки «Блог»

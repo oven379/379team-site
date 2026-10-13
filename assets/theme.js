@@ -19,3 +19,29 @@
   });
   apply(document.documentElement.getAttribute('data-theme') === 'light' ? 'light' : 'dark', false);
 })();
+
+/* Уведомление о cookie. Выбор хранится в браузере (itc-cookies: yes / no) и больше не спрашивается.
+   При отказе Яндекс Метрика отключается маленьким скриптом в <head> на следующих страницах. */
+(function () {
+  var KEY = 'itc-cookies', choice = null;
+  try { choice = localStorage.getItem(KEY); } catch (e) { return; }
+  if (choice) return;
+  function show() {
+    var box = document.createElement('div');
+    box.className = 'cookie-bar';
+    box.setAttribute('role', 'dialog');
+    box.setAttribute('aria-label', 'Уведомление о файлах cookie');
+    box.innerHTML = '<p>Сайт использует файлы cookie и Яндекс Метрику, чтобы понимать, как им пользуются, и становиться удобнее.</p>' +
+      '<div class="cookie-bar__btns"><button type="button" class="cookie-bar__no">Отклонить</button>' +
+      '<button type="button" class="cookie-bar__yes">Разрешить</button></div>';
+    document.body.appendChild(box);
+    function done(value) {
+      try { localStorage.setItem(KEY, value); } catch (e) {}
+      if (value === 'no') window['disableYaCounter113101565'] = true;
+      box.remove();
+    }
+    box.querySelector('.cookie-bar__yes').addEventListener('click', function () { done('yes'); });
+    box.querySelector('.cookie-bar__no').addEventListener('click', function () { done('no'); });
+  }
+  if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
+})();
