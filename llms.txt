@@ -48,7 +48,7 @@ It Компания — российская IT-компания полного 
 Стоимость: от 49 000 ₽.
 
 #### Оформление соцсетей
-Единый визуальный стиль для Instagram, VK, Telegram. Аватар, обложка, хайлайты, шаблоны постов (10 шт) и сторис (10 шт).
+Единый визуальный стиль для ВКонтакте и Telegram. Аватар, обложка, хайлайты, шаблоны постов (10 шт) и сторис (10 шт).
 Стоимость: от 19 000 ₽.
 
 #### SEO и контекстная реклама
@@ -127,6 +127,12 @@ Telegram: https://t.me/manager379team
 - [Портфолио: приложения, CRM и сайты](https://itcompania.ru/portfolio/)
 - [Условия работы: этапы, договор, оплата](https://itcompania.ru/usloviya-raboty/)
 - [Блог](https://itcompania.ru/blog/)
+- [Статья: Редизайн сайта: когда нужен, как сделать и сколько стоит](https://itcompania.ru/blog/redizajn-sajta/)
+- [Статья: Техническое задание на разработку сайта: пример и шаблон](https://itcompania.ru/blog/tehnicheskoe-zadanie-na-sajt/)
+- [Статья: Как сделать сайт на Тильде самостоятельно: пошаговая инструкция](https://itcompania.ru/blog/kak-sdelat-sajt-na-tilde/)
+- [Статья: Разработка фирменного стиля: что входит, этапы и стоимость](https://itcompania.ru/blog/firmennyj-stil/)
+- [Статья: Конверсия интернет-магазина: какая нормальная, как посчитать и 5 ошибок корзины](https://itcompania.ru/blog/konversiya-internet-magazina/)
+- [Статья: CloudKassir: что это, почему пришёл чек и как подключить к интернет-магазину](https://itcompania.ru/blog/cloudkassir/)
 - [Статья: Онлайн-касса для интернет-магазина: нужна ли, как выбрать и подключить к Тильде](https://itcompania.ru/blog/onlajn-kassa-dlya-internet-magazina/)
 - [Статья: Сайт для службы вскрытия замков: три кейса на Тильде и что важно срочной услуге](https://itcompania.ru/blog/keis-vskrytie-zamkov/)
 - [Статья: Маркировка БАДов в «Честном знаке»: сроки, требования и продажа через интернет-магазин](https://itcompania.ru/blog/chestnyj-znak-bady/)
