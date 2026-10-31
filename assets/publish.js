@@ -5,7 +5,15 @@
    [data-list="3"] — показать не больше 3 вышедших элементов; если ни одного — скрыть блок.
    <html data-gate="ГГГГ-ММ-ДД"> — страница статьи: до даты вместо текста показывается «Статья выйдет …». */
 (function () {
+  // При наступлении даты обновляем открытую вкладку: карточки и ссылки появятся без ручного обновления.
+  var next = Infinity;
   var now = new Date();
+  document.querySelectorAll("[data-publish],html[data-gate]").forEach(function (el) {
+    var date = el.getAttribute("data-publish") || el.getAttribute("data-gate");
+    var wait = new Date(date + "T10:00:00+03:00").getTime() - now.getTime();
+    if (wait > 0) next = Math.min(next, wait);
+  });
+  if (isFinite(next)) setTimeout(function () { location.reload(); }, Math.min(next + 1000, 2147483647));
   function at(d) { return new Date(d + 'T10:00:00+03:00'); }
   function live(el) { return at(el.getAttribute('data-publish')) <= now; }
 

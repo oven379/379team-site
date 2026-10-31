@@ -1,0 +1,13 @@
+# Вставить ВНУТРЬ действующего server для itcompania.ru.
+# Не заменять этим файлом конфигурацию с SSL-сертификатами.
+# Существующий location / заменить, а не дублировать.
+location ~ /\.(?!well-known/) { return 404; }
+location ^~ /_tools/ { return 404; }
+location = /Dockerfile { return 404; }
+location = /nginx.conf { return 404; }
+location / { try_files $uri $uri/ =404; }
+error_page 404 /404.html;
+location = /404.html { internal; }
+
+# www: нужен отдельный server_name и сертификат, включающий www.itcompania.ru.
+# После выпуска сертификата в server для www: return 301 https://itcompania.ru$request_uri;

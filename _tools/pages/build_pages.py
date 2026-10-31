@@ -122,7 +122,7 @@ TAIL = f'''
 {footer}
 
 {script}
-<script src="/assets/publish.js" defer></script>
+<script src="/assets/publish.js?v=2" defer></script>
 </body>
 </html>
 '''

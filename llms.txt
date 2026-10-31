@@ -127,6 +127,8 @@ Telegram: https://t.me/manager379team
 - [Портфолио: приложения, CRM и сайты](https://itcompania.ru/portfolio/)
 - [Условия работы: этапы, договор, оплата](https://itcompania.ru/usloviya-raboty/)
 - [Блог](https://itcompania.ru/blog/)
+- [Статья: Как подключить оплату на Тильде: платёжные системы, корзина и кнопка оплаты](https://itcompania.ru/blog/oplata-na-tilde/)
+- [Статья: Интернет-магазин на Тильде: как сделать, возможности и ограничения](https://itcompania.ru/blog/internet-magazin-na-tilde/)
 - [Статья: Редизайн сайта: когда нужен, как сделать и сколько стоит](https://itcompania.ru/blog/redizajn-sajta/)
 - [Статья: Техническое задание на разработку сайта: пример и шаблон](https://itcompania.ru/blog/tehnicheskoe-zadanie-na-sajt/)
 - [Статья: Как сделать сайт на Тильде самостоятельно: пошаговая инструкция](https://itcompania.ru/blog/kak-sdelat-sajt-na-tilde/)

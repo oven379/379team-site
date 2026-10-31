@@ -145,7 +145,7 @@ import datetime
 # Карта сайта, llms.txt и JSON-LD блога содержат статьи, вышедшие на момент сборки,
 # и обновляются при следующей выгрузке сайта на сервер.
 PUBLISH_HOUR = 10
-NOW_MSK = datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=3)))
+NOW_MSK = (datetime.datetime.fromisoformat(os.environ['BLOG_NOW']) if os.environ.get('BLOG_NOW') else datetime.datetime.now(datetime.timezone(datetime.timedelta(hours=3))))
 TODAY = NOW_MSK.date().isoformat()
 def is_live(p):
     return p['date'] < TODAY or (p['date'] == TODAY and NOW_MSK.hour >= PUBLISH_HOUR)
@@ -154,7 +154,7 @@ POSTS = [p for p in ALL_SORTED if is_live(p)]          # вышли на мом�
 DATES = {p['slug']: p['date'] for p in ALL_POSTS}
 SITE = 'https://itcompania.ru'
 BURL = f'{SITE}/blog/'
-PUBLISH_JS = '\n<script src="/assets/publish.js" defer></script>'
+PUBLISH_JS = '\n<script src="/assets/publish.js?v=2" defer></script>'
 PUBLISH_CSS = ('\n  <style>[data-publish]:not(a){display:none!important}'
                '.gate-msg{display:none}.gated .gate-msg{display:block}'
                '.gated .article,.gated .article-hero .meta,.gated .cta{display:none}</style>')

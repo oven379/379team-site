@@ -8,7 +8,7 @@ import glob, os, re
 
 ROOT = os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..'))
 
-THEME_VER = '6'  # увеличивайте при правке assets/theme.css или theme.js
+THEME_VER = '7'  # увеличивайте при правке assets/theme.css или theme.js
 INLINE = ('<script>try{if(localStorage.getItem(\'itc-theme\')===\'light\')'
           'document.documentElement.setAttribute(\'data-theme\',\'light\');'
           'if(localStorage.getItem(\'itc-cookies\')===\'no\')window[\'disableYaCounter113101565\']=true'
