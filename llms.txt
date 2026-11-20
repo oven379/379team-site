@@ -127,7 +127,7 @@ Telegram: https://t.me/manager379team
 - [Портфолио: приложения, CRM и сайты](https://itcompania.ru/portfolio/)
 - [Условия работы: этапы, договор, оплата](https://itcompania.ru/usloviya-raboty/)
 - [Блог](https://itcompania.ru/blog/)
-- [Статья: Редизайн КарПас: бортовой журнал автомобиля на телефоне и компьютере](https://itcompania.ru/blog/redizajn-karpas-bortovoj-zhurnal/)
+- [Статья: Обновили дизайн КарПас: бортовой журнал автомобиля для владельца и сервиса](https://itcompania.ru/blog/redizajn-karpas-bortovoj-zhurnal/)
 - [Статья: Процесс разработки веб-приложения: этапы, сроки и частые ошибки](https://itcompania.ru/blog/protsess-razrabotki-veb-prilozheniya/)
 - [Статья: Как подключить amoCRM к Тильде: заявки с сайта сразу в CRM](https://itcompania.ru/blog/tilda-amocrm/)
 - [Статья: Продвижение сайта на Тильде: SEO-настройки и что делать после запуска](https://itcompania.ru/blog/prodvizhenie-sajta-na-tilde/)
