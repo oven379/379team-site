@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<yml_catalog date="2026-10-31 17:19">
+<yml_catalog date="2026-11-20 12:58">
   <shop>
     <name>It Компания</name>
     <company>It Компания</company>
@@ -22,7 +22,7 @@
       <offer id="lending">
         <name>It Компания</name>
         <url>https://itcompania.ru/lending/</url>
-        <price from="true">69000</price>
+        <price from="true">30000</price>
         <currencyId>RUR</currencyId>
         <sales_notes>за проект</sales_notes>
         <categoryId>18</categoryId>
@@ -64,7 +64,7 @@
       <offer id="internet-magazin">
         <name>It Компания</name>
         <url>https://itcompania.ru/internet-magazin/</url>
-        <price from="true">119000</price>
+        <price from="true">50000</price>
         <currencyId>RUR</currencyId>
         <sales_notes>за проект</sales_notes>
         <categoryId>18</categoryId>
@@ -106,7 +106,7 @@
       <offer id="sajt-dlya-sellerov">
         <name>It Компания</name>
         <url>https://itcompania.ru/sajt-dlya-sellerov/</url>
-        <price from="true">119000</price>
+        <price from="true">50000</price>
         <currencyId>RUR</currencyId>
         <sales_notes>за проект</sales_notes>
         <categoryId>18</categoryId>
@@ -127,7 +127,7 @@
       <offer id="sajt-dlya-restorana">
         <name>It Компания</name>
         <url>https://itcompania.ru/sajt-dlya-restorana/</url>
-        <price from="true">69000</price>
+        <price from="true">30000</price>
         <currencyId>RUR</currencyId>
         <sales_notes>за проект</sales_notes>
         <categoryId>18</categoryId>
@@ -148,7 +148,7 @@
       <offer id="sajt-dlya-proizvodstva">
         <name>It Компания</name>
         <url>https://itcompania.ru/sajt-dlya-proizvodstva/</url>
-        <price from="true">119000</price>
+        <price from="true">50000</price>
         <currencyId>RUR</currencyId>
         <sales_notes>за проект</sales_notes>
         <categoryId>18</categoryId>
@@ -174,7 +174,7 @@
         <sales_notes>за проект</sales_notes>
         <categoryId>18</categoryId>
         <set-ids>s1</set-ids>
-        <picture>https://itcompania.ru/logo.png</picture>
+        <picture>https://itcompania.ru/feed/detailing.png</picture>
         <description>Редизайн и доработка сайта. Обновление существующего сайта: аудит, дизайн, мобильная версия, скорость загрузки и удобство оформления заявки.</description>
         <param name="Рейтинг">0</param>
         <param name="Число отзывов">0</param>
@@ -400,7 +400,7 @@
       <offer id="mobile">
         <name>It Компания</name>
         <url>https://itcompania.ru/mobile/</url>
-        <price from="true">180000</price>
+        <price from="true">100000</price>
         <currencyId>RUR</currencyId>
         <sales_notes>за проект</sales_notes>
         <categoryId>18</categoryId>

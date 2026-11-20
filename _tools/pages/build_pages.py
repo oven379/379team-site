@@ -132,13 +132,18 @@ def crumbs(*items):
         {"@type": "ListItem", "position": i + 1, "name": n, "item": u} for i, (n, u) in enumerate(items)]}
 
 def app_card(a):
+    preview = (f'<a href="{a["case"]}"><img src="{a["image"]}" width="1898" height="1458" loading="lazy" alt="Обновлённый интерфейс КарПас: карточка автомобиля" style="display:block;width:100%;height:auto;border-radius:10px;margin-bottom:18px"/></a>' if a.get('image') and a.get('case') else '')
     links = [f'<a class="store-btn" href="{a["appstore"]}" target="_blank" rel="noopener">{APPLE}<span><small>Загрузите в</small>App Store</span></a>'] if a.get('appstore') else []
+    if preview:
+        preview = '\n      ' + preview
     if a.get('case'):
         links.append(f'<a class="text-link" href="{a["case"]}">Читать кейс →</a>')
+    if a.get('update'):
+        links.append(f'<a class="text-link" href="{a["update"]}">Редизайн КарПас</a>')
     if a.get('site'):
         links.append(f'<a class="text-link" href="{a["site"]}" target="_blank" rel="noopener">Сайт проекта →</a>')
     return f'''
-    <div class="case">
+    <div class="case">{preview}
       <span class="kind">{a['kind']}</span>
       <h3>{a['name']}</h3>
       <p>{a['text']}</p>
@@ -371,7 +376,8 @@ sm = open(f'{ROOT}/sitemap.xml', encoding='utf-8').read()
 for s in slugs + ['sajt-onlajn-kursa']:  # старый адрес страницы онлайн-школы
     sm = re.sub(rf'  <url><loc>{SITE}/{s}/</loc>.*?</url>\n', '', sm)
 PAGES_UPDATED = '2026-10-04'  # меняйте при правке текстов страниц услуг
-rows = [f'  <url><loc>{SITE}/{s}/</loc><lastmod>{PAGES_UPDATED}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>' for s in slugs]
+CASE_UPDATED = {'portfolio', 'razrabotka-crm-sistemy', 'razrabotka-veb-prilozhenij', 'sajt-dlya-sellerov', 'sajt-dlya-restorana', 'sajt-dlya-proizvodstva'}
+rows = [f'  <url><loc>{SITE}/{s}/</loc><lastmod>{"2026-11-20" if s in CASE_UPDATED else PAGES_UPDATED}</lastmod><changefreq>monthly</changefreq><priority>0.8</priority></url>' for s in slugs]
 anchor = f'  <url><loc>{SITE}/blog/</loc>'
 sm = sm.replace(anchor, '\n'.join(rows) + '\n' + anchor, 1) if anchor in sm else sm.replace('</urlset>', '\n'.join(rows) + '\n</urlset>')
 open(f'{ROOT}/sitemap.xml', 'w', encoding='utf-8').write(sm)

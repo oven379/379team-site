@@ -18,6 +18,7 @@ EXTRA = '''
     .article h2{font-size:clamp(24px,3vw,32px);margin:56px 0 16px}
     .article p{color:#d6d6d6;font-size:17px;line-height:1.8;margin-bottom:16px}
     .article a{color:var(--accent)}
+    .article a.btn-primary{color:#111;max-width:100%;white-space:normal;text-align:center}
     .article ul,.article ol{margin:0 0 20px 22px;color:#d6d6d6;font-size:17px;line-height:1.8}
     .article li{margin-bottom:8px}
     .article li::marker{color:var(--accent)}
@@ -58,6 +59,7 @@ EXTRA = '''
     .facts span{font-size:14px;color:var(--text)}
     .shot{margin:8px 0 24px}
     .shot img{display:block;width:100%;height:auto;border-radius:12px;border:1px solid var(--border)}
+    .shot-phone{max-width:380px;margin-left:auto;margin-right:auto}
     .shot figcaption{color:var(--muted);font-size:13px;margin-top:8px}
     .shots-2{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:560px}
     .article pre.template{background:var(--bg2);border:1px solid var(--border);border-radius:10px;padding:18px 20px;margin:8px 0 24px;color:#d6d6d6;font-size:14px;line-height:1.7;white-space:pre-wrap;overflow-wrap:anywhere;font-family:ui-monospace,SFMono-Regular,Menlo,monospace}
@@ -97,6 +99,7 @@ header_blog = header.replace('<a href="/blog/" class="blog-link">', '<a href="/b
 def e(s): return html.escape(s, quote=True)
 
 def head(title, desc, url, ogtype, lds, image='https://itcompania.ru/og-image.png'):
+    image_width, image_height = (1898, 1458) if image.endswith('karpas-kartochka-auto-desktop-2026.png') else (1200, 630)
     ld = ''.join('\n  <script type="application/ld+json">\n  ' + json.dumps(x, ensure_ascii=False) + '\n  </script>' for x in lds)
     return f'''<!DOCTYPE html>
 <html lang="ru">
@@ -114,8 +117,8 @@ def head(title, desc, url, ogtype, lds, image='https://itcompania.ru/og-image.pn
   <meta property="og:title" content="{e(title.split(' | ')[0])}"/>
   <meta property="og:description" content="{e(desc)}"/>
   <meta property="og:image" content="{image}"/>
-  <meta property="og:image:width" content="1200"/>
-  <meta property="og:image:height" content="630"/>
+  <meta property="og:image:width" content="{image_width}"/>
+  <meta property="og:image:height" content="{image_height}"/>
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:title" content="{e(title.split(' | ')[0])}"/>
   <meta name="twitter:description" content="{e(desc)}"/>
@@ -211,6 +214,7 @@ def build_post(A):
     # «Читайте также»: все остальные статьи, показываются 3 последних вышедших
     others = [p for p in ALL_SORTED if p['slug'] != A['slug']]
     more = ''.join(f'\n    <li data-publish="{p["date"]}"><a href="/blog/{p["slug"]}/">{p["h1"]}</a></li>' for p in others)
+    updated_html = ('\n  <p class="meta">Обновлено: <time datetime="' + A['modified'] + '">' + A['modified'] + '</time></p>') if A.get('modified') else ''
     h2, ctap = A['cta']
     page = head(A['title'], A['desc'], url, 'article', lds, img) + f'''
 <div class="article-hero hero" style="margin:0 auto">
@@ -219,7 +223,7 @@ def build_post(A):
   </nav>
   <p class="eyebrow">{A['eyebrow']}</p>
   <h1>{A['h1']}</h1>
-  <p class="meta"><time datetime="{A['date']}">{A['date_h']}</time> · {A['read']} чтения · It Компания</p>
+  <p class="meta"><time datetime="{A['date']}">{A['date_h']}</time> · {A['read']} чтения · It Компания</p>{updated_html}
   <div class="gate-msg"><p class="hero-sub">Статья выйдет {A['date_h']} в 10:00 по Москве.</p><p class="meta" id="gate-msg"></p>
   <p style="margin-top:20px"><a class="btn-primary" href="/blog/">Все статьи блога</a></p></div>
 </div>
@@ -252,20 +256,24 @@ blds = [
      "blogPost": [{"@type": "BlogPosting", "headline": p['h1'], "url": f"{BURL}{p['slug']}/", "datePublished": p['date']} for p in POSTS]},
     crumbs(("Главная", f"{SITE}/"), ("Блог", BURL)),
 ]
+def card_image(p):
+    return f'<img class="post-card-image" src="{p["image"]}" width="1898" height="1458" loading="lazy" alt="{e(p["crumb"])}"/>' if p.get('image', '').endswith('karpas-kartochka-auto-desktop-2026.png') else ''
+
 cards = ''.join(f'''
   <a class="post-card" href="/blog/{p['slug']}/" data-publish="{p['date']}">
     <span class="meta"><time datetime="{p['date']}">{p['date_h']}</time> · {p['read']}</span>
+    {card_image(p)}
     <h2>{p['h1']}</h2>
     <p>{p['card']}</p>
     <span class="more">Читать →</span>
   </a>''' for p in ALL_SORTED)
-bpage = head('Блог о разработке сайтов на Tilda, приложений и интеграций | It Компания',
+bpage = head('Блог о сайтах, приложениях и автоматизации бизнеса | IT Компания',
              'Статьи и кейсы It Компании: сколько стоит сайт на Tilda, как выбрать формат сайта и разработчика, интеграции с Ozon и CRM, разработка мобильных приложений.',
              BURL, 'website', blds) + f'''
 <div class="hero">
   <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Главная</a> → <span>Блог</span></nav>
   <p class="eyebrow">Блог</p>
-  <h1>Статьи и кейсы о сайтах на <em>Tilda</em> и digital-продуктах</h1>
+  <h1>Статьи и кейсы о <em>цифровых продуктах</em> для бизнеса</h1>
   <p class="hero-sub">Рассказываем, сколько стоит сайт, как выбрать формат и подрядчика, и показываем наши проекты: интеграции, приложения, CRM.</p>
 </div>
 <section style="padding-top:0">

@@ -5,10 +5,12 @@
 
 APPS = [
     dict(
-        name='КарПас', kind='Мобильное приложение + CRM + веб',
-        text='Цифровая история обслуживания авто для владельцев и CRM для детейлингов и СТО. iOS, Android и веб, 3 месяца разработки и тестов.',
+        name='КарПас', kind='Бортовой журнал авто + CRM + веб',
+        text='Бортовой журнал автомобиля и CRM для детейлингов и СТО. Обновили дизайн гаража, карточки авто и мобильной версии. Первая версия: 3 месяца разработки и тестов.',
         appstore='https://apps.apple.com/ru/app/carpasss-%D0%BA%D0%B0%D1%80%D0%BF%D0%B0%D1%81%D1%81%D1%81/id6768924960',
         site='https://carpasss.ru', case='/blog/keis-karpas/',
+        update='/blog/redizajn-karpas-bortovoj-zhurnal/',
+        image='/blog/keis-karpas/karpas-kartochka-auto-desktop-2026.png',
         tags=['mobile', 'crm-dev', 'webapp'], confirmed=True,
     ),
     dict(

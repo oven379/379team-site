@@ -29,19 +29,19 @@ SETS = [('s1', 'Разработка сайтов, приложений и CRM �
 
 # slug страницы, название услуги, цена «от», за что цена, категория, описание
 SERVICES = [
-    ('lending', 'Лендинг на Tilda под ключ', 69000, 'за проект', 18,
+    ('lending', 'Лендинг на Tilda под ключ', 30000, 'за проект', 18,
      'Одностраничный сайт на Tilda: структура, тексты, дизайн, формы заявок, подключение аналитики.'),
     ('mnogostrannichny-sajt', 'Многостраничный сайт на Tilda', 99000, 'за проект', 18,
      'Сайт компании на Tilda: страницы услуг, портфолио, блог, формы заявок, базовая SEO-настройка.'),
-    ('internet-magazin', 'Интернет-магазин на Tilda', 119000, 'за проект', 18,
+    ('internet-magazin', 'Интернет-магазин на Tilda', 50000, 'за проект', 18,
      'Магазин на Tilda: каталог, корзина, онлайн-оплата, доставка, онлайн-касса.'),
     ('sajt-dlya-onlajn-shkoly', 'Сайт для онлайн-школы', 79000, 'за проект', 18,
      'Сайт курса или эксперта: программа, форма записи, приём оплаты, связка с платформой обучения.'),
-    ('sajt-dlya-sellerov', 'Сайт для селлера маркетплейсов', 119000, 'за проект', 18,
+    ('sajt-dlya-sellerov', 'Сайт для селлера маркетплейсов', 50000, 'за проект', 18,
      'Свой интернет-магазин для продавцов Ozon, Wildberries и Яндекс Маркета: каталог, оплата, доставка в пункты выдачи, касса.'),
-    ('sajt-dlya-restorana', 'Сайт для ресторана и кафе', 69000, 'за проект', 18,
+    ('sajt-dlya-restorana', 'Сайт для ресторана и кафе', 30000, 'за проект', 18,
      'Сайт заведения на Tilda: меню с ценами, бронирование столика, заказ на доставку и самовывоз.'),
-    ('sajt-dlya-proizvodstva', 'Сайт для производства и стройматериалов', 119000, 'за проект', 18,
+    ('sajt-dlya-proizvodstva', 'Сайт для производства и стройматериалов', 50000, 'за проект', 18,
      'Сайт производителя или поставщика: каталог продукции, прайс-лист, заявка на расчёт, условия доставки.'),
     ('detailing', 'Редизайн и доработка сайта', 39000, 'за проект', 18,
      'Обновление существующего сайта: аудит, дизайн, мобильная версия, скорость загрузки и удобство оформления заявки.'),
@@ -65,7 +65,7 @@ SERVICES = [
      'Чат-боты и мини-приложения Telegram: запись, заказы, оплата, уведомления, связка с CRM.'),
     ('razrabotka-sajta-na-zakaz', 'Разработка сайта на заказ', 250000, 'за спринт', 18,
      'Сайт на собственном коде, когда конструктора мало: сложная логика, интеграции, нестандартные задачи.'),
-    ('mobile', 'Разработка мобильных приложений', 180000, 'за проект', 18,
+    ('mobile', 'Разработка мобильных приложений', 100000, 'за проект', 18,
      'Приложения для iOS и Android: проектирование, дизайн, разработка, публикация в магазинах.'),
 ]
 
@@ -103,7 +103,7 @@ def build_feed():
                 '        ' + tag('sales_notes', unit),
                 '        ' + tag('categoryId', cat),
                 '        ' + tag('set-ids', ','.join(s[0] for s in SETS)),
-                '        ' + tag('picture', (SITE + '/logo.png' if slug == 'detailing' else f'{SITE}/feed/{slug}.png')),
+                '        ' + tag('picture', f'{SITE}/feed/{slug}.png'),
                 '        ' + tag('description', f'{title}. {text}')]
         out += ['        ' + tag('param', v, f' name="{k}"') for k, v in params]
         out.append('      </offer>')
@@ -129,10 +129,10 @@ def build_covers():
     bold = lambda size: ImageFont.truetype(fonts + 'Arial Bold.ttf', size)
     regular = lambda size: ImageFont.truetype(fonts + 'Arial.ttf', size)
     W = H = 800
-    PAD, ACCENT, WHITE, MUTED = 72, '#b5e05a', '#f2f2f2', '#9a9a9a'
+    PAD, ACCENT, WHITE, MUTED = 72, '#536139', '#161b14', '#596151'
     os.makedirs(f'{ROOT}/feed', exist_ok=True)
     for slug, title, price, unit, cat, text in SERVICES:
-        img = Image.new('RGB', (W, H), '#181818')
+        img = Image.new('RGB', (W, H), '#faf9f6')
         d = ImageDraw.Draw(img)
         d.rectangle([0, 0, 12, H], fill=ACCENT)
         d.text((PAD, 72), 'It', font=bold(36), fill=ACCENT)
@@ -150,7 +150,7 @@ def build_covers():
             y += int(size * 1.18)
         money = f'{price:,}'.replace(',', ' ')
         d.text((PAD, 590), f'от {money} руб.', font=bold(52), fill=ACCENT)
-        d.text((PAD + d.textlength(f'от {money} руб.  ', font=bold(52)), 608), unit, font=regular(32), fill=MUTED)
+        d.text((PAD, 654), unit, font=regular(26), fill=MUTED)
         d.text((PAD, 690), 'itcompania.ru', font=regular(32), fill=MUTED)
         img.save(f'{ROOT}/feed/{slug}.png', optimize=True)
     print(f'обложки: /feed/*.png, штук — {len(SERVICES)}')

@@ -12,7 +12,7 @@ HEAD=f'''  <!-- Yandex.Metrika counter -->
   </script>
   <!-- /Yandex.Metrika counter -->
 '''
-BODY=f'<noscript><div><img src="https://mc.yandex.ru/watch/{ID}" style="position:absolute; left:-9999px;" alt=""/></div></noscript>\n'
+BODY=f'<noscript><div><img src="https://mc.yandex.ru/watch/{ID}" style="position:absolute; left:-9999px;" width="1" height="1" alt=""/></div></noscript>\n'
 def add(s):
     if 'mc.yandex.ru/metrika' in s: return s
     s=s.replace('</head>',HEAD+'</head>',1)

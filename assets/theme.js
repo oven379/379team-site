@@ -45,3 +45,20 @@
   }
   if (document.body) show(); else document.addEventListener('DOMContentLoaded', show);
 })();
+
+/* FAQ: озвучиваем состояние раскрытия для клавиатуры и скринридеров. */
+(function () {
+  function sync() {
+    document.querySelectorAll('.faq-q').forEach(function (button, i) {
+      var answer = button.nextElementSibling;
+      if (!answer || !answer.classList.contains('faq-a')) return;
+      if (!answer.id) answer.id = 'faq-answer-' + (i + 1);
+      button.setAttribute('aria-controls', answer.id);
+      button.setAttribute('aria-expanded', answer.classList.contains('open') ? 'true' : 'false');
+    });
+  }
+  sync();
+  document.addEventListener('click', function (event) {
+    if (event.target.closest && event.target.closest('.faq-q')) sync();
+  });
+})();
