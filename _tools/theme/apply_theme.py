@@ -2,7 +2,7 @@
 """Общее оформление и навигация. Запускать после сборки страниц и блога."""
 import glob, os, re
 ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..'))
-THEME_VER = '9'
+THEME_VER = '10'
 INLINE = ("<script>try{if(localStorage.getItem('itc-theme')==='dark')"
           "document.documentElement.removeAttribute('data-theme');"
           "else document.documentElement.setAttribute('data-theme','light');"

@@ -3,7 +3,7 @@ html[data-theme="light"]{--bg:#faf9f6;--bg2:#f0f0e9;--bg3:#e8ebdf;--border:#d5d9
 html:not([data-theme="light"]){--bg:#181c16;--bg2:#22281e;--bg3:#2c3427;--border:#47503e;--accent:#b5cb8b;--text:#edf0e8;--white:#fff;--muted:#bbc3b1;--muted2:#a5af9b;--button:#b5cb8b;--button-text:#182010;color-scheme:dark}
 body{font-family:Inter,Arial,sans-serif;background:var(--bg);color:var(--text)}
 body>header:first-of-type{position:relative;top:auto;max-width:1440px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:24px;padding:24px 48px;border-bottom:1px solid var(--border);background:transparent!important;backdrop-filter:none;z-index:10}
-.site-brand{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:700;letter-spacing:-1px;white-space:nowrap;color:var(--white);text-decoration:none}.site-brand-mark{width:13px;height:28px;transform:skew(-22deg);background:var(--accent)}
+.site-brand{display:flex;align-items:center;gap:10px;font-size:25px;font-weight:700;letter-spacing:.005em;white-space:nowrap;color:var(--white);text-decoration:none}.site-brand-mark{width:13px;height:28px;transform:skew(-22deg);background:var(--accent)}
 .site-navigation{display:flex;gap:30px}.site-navigation a{font-size:15px;color:var(--text);text-decoration:none}.site-navigation a:hover,.site-navigation .is-active{color:var(--accent);text-decoration:underline;text-underline-offset:6px}
 .site-header-actions{display:flex;align-items:center;gap:12px;flex-shrink:0}.site-phone{display:flex;width:40px;height:40px;align-items:center;justify-content:center;border:1px solid var(--border);border-radius:50%;color:var(--text)}
 html body :is(.btn-primary,.btn-accent,.btn-dark,.nav-cta,.service-btn,.icon-btn.tg,.busy-promo__btn,.cookie-bar__yes),html[data-theme="light"] body :is(.btn-primary,.btn-accent,.btn-dark,.nav-cta,.service-btn,.icon-btn.tg,.busy-promo__btn,.cookie-bar__yes){background:var(--button)!important;color:var(--button-text)!important;border-color:var(--button)!important;box-shadow:none;border-radius:7px}
@@ -13,13 +13,13 @@ body .site-contact{padding:11px 18px;font-size:14px;white-space:nowrap}
 a:focus-visible,button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:4px}a,button{-webkit-tap-highlight-color:transparent}
 main>.hero:not(.article-hero),main>section{max-width:1280px;margin-left:auto;margin-right:auto;padding-left:48px;padding-right:48px}
 main>.hero:not(.article-hero){padding-top:68px;padding-bottom:56px}.hero::before,.final-cta::before{display:none}
-h1,h2,.section-title,.section-title-xl{font-family:Inter,Arial,sans-serif;letter-spacing:-.045em}h1{font-size:clamp(36px,4.7vw,68px);line-height:1.08;overflow-wrap:break-word}h1 em{color:var(--accent)}
+h1,h2,.section-title,.section-title-xl{font-family:Inter,Arial,sans-serif;letter-spacing:.005em}h1{font-size:clamp(36px,4.7vw,68px);line-height:1.08;overflow-wrap:break-word}h1 em{color:var(--accent)}
 .hero-sub,.section-sub,.page-intro{color:var(--muted);line-height:1.75;max-width:760px}.hero-sub{font-size:18px}.eyebrow,.section-label,.hero-eyebrow{font-size:13px;letter-spacing:1.5px;color:var(--muted)}
 .hero-actions{margin-bottom:32px}.price-block{background:var(--bg2);border-color:var(--border);padding:24px 28px}.price-num{color:var(--accent);font-size:38px}.price-meta{font-size:14px;color:var(--muted)}
 :is(.include-item,.why-item,.case,.site-item,.post-card,.related a,.pricing-card,.service-card,.fact-card,.offer-card){border-color:var(--border);background:var(--bg2);border-radius:14px;min-width:0}
 :is(.include-item,.why-item,.case,.site-item,.post-card,.related a):hover{border-color:var(--accent)}
 :is(.include-item p,.why-item p,.step p,.case p,.site-item span,.faq-a,.pricing-features li,.process-step p){font-size:16px;line-height:1.75;color:var(--muted)}
-:is(.include-item h3,.why-item h3,.step h3,.case h3){font-size:20px;line-height:1.3;letter-spacing:-.4px}
+:is(.include-item h3,.why-item h3,.step h3,.case h3){font-size:20px;line-height:1.3;letter-spacing:.005em}
 .case .kind,.site-item i,.tech-tag,.price-meta,.stat-label{font-size:13px}.case{padding:28px}.case-links{gap:12px}.case-links a{max-width:100%;overflow-wrap:anywhere}.case-links .text-link{font-size:14px}.store-btn{background:#171a15!important;color:#fff!important}
 .site-item b{font-size:18px}.site-item span{font-size:15px}.post-card{padding:30px}.post-card h2{font-size:25px;line-height:1.25}.post-card p{font-size:16px;line-height:1.75}.post-card .meta{font-size:14px}.post-card-image{display:block;width:100%;height:210px;object-fit:cover;object-position:top;border-radius:10px;margin-bottom:24px}
 .article-hero{max-width:900px;padding:60px 40px 30px!important}.article{max-width:900px;padding:0 40px 80px}.article h1{font-size:clamp(32px,4vw,54px)}.article p,.article li,.prose p,.prose li{color:var(--text);font-size:17px;line-height:1.85}.article .lead{font-size:20px;line-height:1.75}.article h2{margin-top:48px;line-height:1.2}.article pre.template{color:var(--text)}.article :is(td,th),.prose :is(td,th){color:var(--text);overflow-wrap:anywhere}.shot figcaption{font-size:14px;line-height:1.6}.shot img{background:var(--bg2)}.facts div{border-radius:10px}.facts b{font-size:13px}.facts span{font-size:15px}.faq-static dt{font-size:18px}.faq-static dd{color:var(--muted);font-size:16px}.related{grid-template-columns:repeat(2,minmax(0,1fr))}.related a{min-width:0}.related span{font-size:15px}.more-posts a{font-size:16px}.read-more{max-width:1280px;padding-left:48px;padding-right:48px}.read-more .section-label{font-size:13px}.prose{max-width:900px}
@@ -35,3 +35,7 @@ main>.hero:not(.article-hero),main>section{padding-left:20px;padding-right:20px}
 @media(max-width:400px){.process-steps{grid-template-columns:1fr}.facts{grid-template-columns:1fr 1fr}.site-brand{font-size:21px}.site-navigation{gap:30px}.hero-eyebrow{font-size:12px;letter-spacing:.5px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
 html:not([data-theme="light"]) .split-label.red{color:#ff9d90}
+
+/* Больше воздуха между буквами, в том числе в старых шаблонах. */
+html body :is(h1,h2,h3,h4,h5,h6,.section-title,.section-title-xl){letter-spacing:.005em}
+html body h1{line-height:1.14}
